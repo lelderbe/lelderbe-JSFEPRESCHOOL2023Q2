@@ -1,10 +1,14 @@
 @import './variables.css';
 @import './fonts.css';
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /* margin: 0; */
     font-family: 'Inter', sans-serif;
-    color: var(--c-light);
+    color: var(--c-dark);
 }
 
 * {
@@ -33,6 +37,7 @@ a:hover {
     display: flex;
     padding: 20px;
     justify-content: space-between;
+    color: var(--c-light);
     background-color: var(--c-light-dark);
 }
 
@@ -76,12 +81,12 @@ a:hover {
 .welcome {
     /* height: 600px; */
     padding: 220px 840px 160px 0;
+    color: var(--c-light);
     background-image: url('../assets/img/welcome-bg.jpg');
 }
 
 .welcome h2 {
     padding: 35px 40px;
-    /* color: #fff; */
     text-align: center;
     font-family: var(--ff-forum);
     font-size: 40px;
@@ -90,4 +95,83 @@ a:hover {
     line-height: 50px; /* 125% */
     letter-spacing: 3px;
     text-transform: uppercase;
+    background-color: var(--c-light-dark);
+}
+
+.title {
+    position: relative;
+    padding-bottom: 21px;
+    color: var(--c-light-dark);
+    font-family: var(--ff-forum);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.title_underline {
+}
+
+.title_underline:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50px;
+    transform: translateX(-50%);
+    border-bottom: 1px solid var(--c-light-dark);
+}
+
+.title_center {
+}
+
+.subtitle {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+}
+
+.layout-3-column {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about {
+    padding: 20px 20px 40px;
+}
+
+.about .subtitle {
+    margin-bottom: 20px;
+}
+
+.about__image {
+    /* display: block; */
+    width: 450px;
+    height: 560px;
+}
+
+.about__dots {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    background-color: var(--c-light-dark);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot_active {
+    background-color: var(--c-colored);
+    cursor: auto;
 }
