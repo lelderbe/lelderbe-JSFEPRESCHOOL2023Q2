@@ -2,15 +2,73 @@
 @import './fonts.css';
 
 body {
-    margin: 0;
+    /* margin: 0; */
     font-family: 'Inter', sans-serif;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 .wrapper {
     width: var(--desktop-content-width);
     margin: 0 auto;
+}
+
+a,
+a:visited {
+    color: var(--c-light);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--c-colored);
+    /* text-decoration: underline; */
+}
+
+.header {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    color: var(--c-light);
+    background-color: var(--c-light-dark);
+}
+
+.header h1 {
+    font-family: var(--ff-forum);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header__navigation {
+    display: flex;
+    gap: 30px;
+    /* color: #fff; */
+    /* font-family: Inter; */
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 250% */
+    list-style: none;
+}
+
+.icon {
+}
+
+.icon_profile {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-image: url('../assets/img/icon-profile.svg');
 }
