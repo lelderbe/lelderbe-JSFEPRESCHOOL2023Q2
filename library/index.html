@@ -10,7 +10,274 @@
 </head>
 
 <body>
-    Hello
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__logo">
+                <h1><a href="/">Brooklyn Public Library</a></h1>
+            </div>
+            <div class="header__menu">
+                <nav>
+                    <ul class="header__navigation">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#favorites">Favorites</a></li>
+                        <li><a href="#shop">Coffee shop</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
+                        <li><a href="#card">Library Card</a></li>
+                    </ul>
+                </nav>
+                <span class="icon icon_profile"></span>
+                <!-- <div class="header__profile">
+                    icon_profile
+                </div> -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="welcome">
+            <div class="wrapper">
+                <h2>Welcome to the Brooklyn Library</h2>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="wrapper">
+                <h2 class="title">About</h2>
+                <p class="subtitle">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee
+                    shop
+                    inside</p>
+                <div class="layout-3-column">
+                    <img src="1" alt="">
+                    <img src="2" alt="">
+                    <img src="3" alt="">
+                </div>
+                <div class="about__dots">
+                    <div class="dot dot_active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </section>
+        <section class="favorites" id="favorites">
+            <div class="wrapper">
+                <h2 class="title">Favorites</h2>
+                <p>Pick favorites of season</p>
+                <div class="favorites__choise">
+                    <ul>
+                        <li>
+                            <label><input type="radio" name="radio" checked><span>Winter</span></label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="radio"><span>Spring</span></label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="radio"><span>Summer</span></label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="radio"><span>Autumn</span></label>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="favorites__books"></div> -->
+                <div class="layout-2-column">
+                    <div class="book">
+                        <div class="book__label">Staff Picks</div>
+                        <div class="book__title">
+                            The Book Eaters<br>
+                            By Sunyi Dean
+                        </div>
+                        <div class="book__desc">
+                            An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous
+                            mind-eater son from tradition and certain death. Complete with dysfunctional family values,
+                            light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                        </div>
+                        <button class="button">Buy</button>
+                        <img class="book__image" src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="shop" id="shop">
+            <div class="wrapper">
+                <h2 class="title">Coffee shop</h2>
+                <p class="subtitle">
+                    In our library, we have of cozy coffee shop, welcoming in customers with frothy
+                    cappuccinos and friendly conversation.
+                    you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also
+                    you
+                    can try desserts from bakery.
+                </p>
+                <div class="layout-2-column">
+                    <div class="menu">
+                        <h2 class="title title_colored">Coffee & Tea</h2>
+                        <ul class="menu__items">
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Cold Brew Coffee</span>
+                                    <div class="line"></div>
+                                    <span>$3</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>French Press Pot</span>
+                                    <div class="line"></div>
+                                    <span>$5</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Espresso</span>
+                                    <div class="line"></div>
+                                    <span>$2</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Cappuccino</span>
+                                    <div class="line"></div>
+                                    <span>$4</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Hot tea</span>
+                                    <div class="line"></div>
+                                    <span>$2</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Cold tea</span>
+                                    <div class="line"></div>
+                                    <span>$2</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        <h2 class="title title_colored title_right">Desserts & Cakes</h2>
+                        <ul class="menu__items">
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Forest Gateau</span>
+                                    <div class="line"></div>
+                                    <span>$16</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Blue Moon</span>
+                                    <div class="line"></div>
+                                    <span>$16</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Truffle Cake</span>
+                                    <div class="line"></div>
+                                    <span>$15</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Chocolate Cake</span>
+                                    <div class="line"></div>
+                                    <span>$18</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Poet’s Dream Cake</span>
+                                    <div class="line"></div>
+                                    <span>$16</span>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <div class="layout-3-column">
+                                    <span>Pineapple Cake</span>
+                                    <div class="line"></div>
+                                    <span>$14</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contacts" id="contacts">
+            <div class="wrapper">
+                <h2 class="title">Our Contacts</h2>
+                <div class="layout-2-column">
+                    <div class="contacts__info">
+                        <p>For all Library inquiries:</p>
+                        <p>Please call (617) 730-2370</p>
+                        <p>For TTY service, please call (617) 730-2370</p>
+                        <p>Putterham Library: (617) 730-2385</p>
+                        <p>Senior Staff</p>
+                        <p>Library Director: Amanda Hirst</p>
+                    </div>
+                    <div class="contacts__map"></div>
+                </div>
+            </div>
+        </section>
+        <section class="card" id="card">
+            <div class="wrapper">
+                <h2 class="title">Digital Library Cards</h2>
+                <div class="layout-2-column">
+                    <form action="">
+                        <div class="form__title">Find your Library card</div>
+                        <div class="box">
+                            <div class="inputs">
+                                <div class="inputs__title">Brooklyn Public Library</div>
+                                <input type="text" name="name" placeholder="Reader's name">
+                                <input type="text" name="card" placeholder="Card number">
+                            </div>
+                            <button class="button">Check the card</button>
+                        </div>
+                    </form>
+                    <div class="card__signin">
+                        <p>Get a reader card</p>
+                        <p>You will be able to see a reader card after logging into account or you can register a new
+                            account</p>
+                        <div class="card__buttons">
+                            <button class="button">Sign Up</button>
+                            <button class="button">Log In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__row">
+                <p>
+                    286 Cadman Plaza, New York,<br>
+                    NY 11238, United States
+                </p>
+                <p>
+                    Mon - Fri<br>
+                    08:00 am - 07:00 pm
+                </p>
+            </div>
+            <div class="footer__row">
+                <div>
+                    <span class="icon icon_twitter"></span>
+                    <span class="icon icon_instagram"></span>
+                    <span class="icon icon_facebook"></span>
+                </div>
+                <p>
+                    Sat - Sun<br>
+                    10:00 am - 06:00 pm
+                </p>
+            </div>
+            <div class="footer__splitter"></div>
+            <div class="footer__credentials">
+                <p>2023</p>
+                <p>The Rolling Scopes School</p>
+                <p>Username</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
