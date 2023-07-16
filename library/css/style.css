@@ -4,6 +4,7 @@
 body {
     /* margin: 0; */
     font-family: 'Inter', sans-serif;
+    color: var(--c-light);
 }
 
 * {
@@ -32,7 +33,6 @@ a:hover {
     display: flex;
     padding: 20px;
     justify-content: space-between;
-    color: var(--c-light);
     background-color: var(--c-light-dark);
 }
 
@@ -71,4 +71,23 @@ a:hover {
     width: 28px;
     height: 28px;
     background-image: url('../assets/img/icon-profile.svg');
+}
+
+.welcome {
+    /* height: 600px; */
+    padding: 220px 840px 160px 0;
+    background-image: url('../assets/img/welcome-bg.jpg');
+}
+
+.welcome h2 {
+    padding: 35px 40px;
+    /* color: #fff; */
+    text-align: center;
+    font-family: var(--ff-forum);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 125% */
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
