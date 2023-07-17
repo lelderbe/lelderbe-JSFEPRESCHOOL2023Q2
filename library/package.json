@@ -1,0 +1,23 @@
+{
+    "name": "lelderbe-jsfepreschool2023q2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "watch": "npx sass --watch sass/main.scss css/style.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rolling-scopes-school/lelderbe-JSFEPRESCHOOL2023Q2.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/rolling-scopes-school/lelderbe-JSFEPRESCHOOL2023Q2/issues"
+    },
+    "homepage": "https://github.com/rolling-scopes-school/lelderbe-JSFEPRESCHOOL2023Q2#readme",
+    "devDependencies": {
+        "sass": "^1.63.6"
+    }
+}
