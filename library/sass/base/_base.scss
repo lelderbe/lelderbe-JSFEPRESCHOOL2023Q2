@@ -3,12 +3,53 @@ html {
 }
 
 body {
-    font-family: $ff-inter;
-    color: $c-dark;
+    font-family: $ff-default;
+    color: $c-text;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+h1 {
+    font: normal 400 30px / 50px $ff-forum;
+    letter-spacing: 0.6px;
+}
+
+h2 {
+}
+
+h3 {
+    color: $c-colored;
+    font-family: $ff-forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+h4 {
+    color: $c-dark;
+    font-family: $ff-forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+a,
+a:visited {
+    @extend %transition;
+    color: $c-light;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $c-colored;
 }

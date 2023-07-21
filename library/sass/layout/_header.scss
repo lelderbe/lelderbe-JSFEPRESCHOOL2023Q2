@@ -1,0 +1,36 @@
+.header {
+    color: $c-light;
+
+    &__wrapper {
+        display: flex;
+        padding: 20px;
+        justify-content: space-between;
+        background-color: $c-light-dark;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        // gap: 25px;
+    }
+
+    &__navigation {
+    }
+}
+
+.navigation {
+    display: flex;
+    gap: 30px;
+    font: normal 400 20px / 50px $ff-default;
+    // font-size: 20px;
+    // font-style: normal;
+    // font-weight: 400;
+    // line-height: 50px;
+    list-style: none;
+    letter-spacing: 0.08px;
+
+    // li {
+    //     margin: 0 15px;
+    // }
+}

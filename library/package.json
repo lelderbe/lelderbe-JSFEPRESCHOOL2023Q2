@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "watch": "npx sass --watch sass/main.scss css/style.css"
+        "dev": "npx sass --watch sass/main.scss css/style.css"
     },
     "repository": {
         "type": "git",

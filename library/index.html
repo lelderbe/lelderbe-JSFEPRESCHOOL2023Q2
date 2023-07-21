@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="header">
+    <header class="header">
+        <div class="wrapper header__wrapper">
             <div class="header__logo">
-                <h1><a href="#">Brooklyn Public Library</a></h1>
+                <h1>Brooklyn Public Library</h1>
             </div>
             <div class="header__menu">
-                <nav>
-                    <ul class="header__navigation">
+                <nav class="header__navigation">
+                    <ul class="navigation">
                         <li><a href="#about">About</a></li>
                         <li><a href="#favorites">Favorites</a></li>
                         <li><a href="#shop">Coffee shop</a></li>
@@ -27,7 +27,6 @@
                 </nav>
                 <span class="icon icon_profile"></span>
             </div>
-    </div>
     </header>
     <main>
         <div class="wrapper">
@@ -35,8 +34,8 @@
                 <h2>Welcome&nbsp; <br> to the Brooklyn <br> Library</h2>
             </section>
         </div>
-        <div class="wrapper">
-            <section class="about" id="about">
+        <section class="about" id="about">
+            <div class="wrapper about__wrapper">
                 <h2 class="title title_underline">About</h2>
                 <p class="subtitle">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee
                     shop
@@ -49,18 +48,12 @@
                     <img class="about__image" src="./assets/img/about/image-5.jpg" alt="">
                 </div>
                 <div class="about__dots">
-                    <div class="dot dot_active">
-                        <div></div>
-                    </div>
-                    <div class="dot">
-                        <div></div>
-                    </div>
-                    <div class="dot">
-                        <div></div>
-                    </div>
+                    <div class="dot dot_active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
         <section class="favorites" id="favorites">
             <div class="wrapper">
                 <h2 class="title">Favorites</h2>
@@ -95,6 +88,48 @@
                             light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
                         </div>
                         <button class="button">Buy</button>
+                        <img class="book__image" src="" alt="">
+                    </div>
+                    <div class="book">
+                        <div class="book__label">Staff Picks</div>
+                        <div class="book__title">
+                            Cackle<br>
+                            By Rachel Harrison
+                        </div>
+                        <div class="book__desc">
+                            Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no
+                            further than here - where a woman recovering from a breakup moves to a quaint town in
+                            upstate New York and befriends a beautiful witch.
+                        </div>
+                        <button class="button">Buy</button>
+                        <img class="book__image" src="" alt="">
+                    </div>
+                    <div class="book">
+                        <div class="book__label">Staff Picks</div>
+                        <div class="book__title">
+                            Dante: Poet of the Secular World<br>
+                            By Erich Auerbach
+                        </div>
+                        <div class="book__desc">
+                            Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and
+                            philosophy in general, arguing for Dante's uniqueness as one who raised the individual and
+                            his drama of soul into something of divine significance—an inspired introduction to Dante's
+                            main themes.
+                        </div>
+                        <button class="button">Buy</button>
+                        <img class="book__image" src="" alt="">
+                    </div>
+                    <div class="book">
+                        <div class="book__label">Staff Picks</div>
+                        <div class="book__title">
+                            The Last Queen<br>
+                            By Clive Irving
+                        </div>
+                        <div class="book__desc">
+                            A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the
+                            Windsors have evolved and thrived as the modern world has changed around them.
+                        </div>
+                        <button class="button button_colored">Own</button>
                         <img class="book__image" src="" alt="">
                     </div>
                 </div>

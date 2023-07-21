@@ -1,0 +1,15 @@
+.welcome {
+    padding: 220px 840px 160px 0;
+    color: $c-light;
+    background-image: url('../assets/img/welcome-bg.jpg');
+    background-size: cover;
+
+    h2 {
+        padding: 35px 40px;
+        text-align: center;
+        font: normal 400 40px / 50px $ff-forum;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        background-color: $c-light-dark;
+    }
+}

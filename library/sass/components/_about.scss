@@ -1,0 +1,45 @@
+.about {
+    &__wrapper {
+        padding: 20px 20px 35px;
+    }
+
+    .subtitle {
+        margin-bottom: 20px;
+    }
+
+    &__image {
+        /* display: block; */
+        width: 450px;
+        height: 560px;
+    }
+
+    &__dots {
+        display: flex;
+        margin-top: 35px;
+        justify-content: center;
+    }
+
+    .layout-3-column {
+        gap: 25px;
+        overflow: hidden;
+    }
+}
+
+.dot {
+    width: 26px;
+    height: 26px;
+    background-color: $c-light-dark;
+    border-radius: 50%;
+    border: 5px solid $c-background;
+    cursor: pointer;
+
+    &:not(&_active):hover {
+        opacity: 0.7;
+    }
+
+    &_active {
+        cursor: auto;
+        opacity: 1;
+        background-color: $c-colored;
+    }
+}

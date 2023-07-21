@@ -1,83 +1,22 @@
+// Abstracts
 @import './abstracts/variables';
-@import './base/base';
+@import './abstracts/placeholders';
+@import './abstracts/mixins';
+
+// Base
+// @import './base/normalize';
 @import './fonts.scss';
+@import './base/base';
+@import './base/icons';
 
-.wrapper {
-    width: $desktop-content-width;
-    margin: 0 auto;
-}
+// Layouts
+@import './layout/wrapper';
+@import './layout/header';
 
-a,
-a:visited {
-    color: $c-light;
-    text-decoration: none;
-}
-
-a:hover {
-    color: $c-colored;
-}
-
-.header {
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
-    color: $c-light;
-    background-color: $c-light-dark;
-
-    h1 {
-        font-family: $ff-forum;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 50px;
-        letter-spacing: 0.6px;
-    }
-
-    &__menu {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
-
-    &__navigation {
-        display: flex;
-        gap: 30px;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 50px;
-        list-style: none;
-        letter-spacing: 0.08px;
-    }
-}
-
-.icon {
-    &_profile {
-        display: block;
-        width: 28px;
-        height: 28px;
-        background-image: url('../assets/img/icon-profile.svg');
-    }
-}
-
-.welcome {
-    padding: 220px 840px 160px 0;
-    color: $c-light;
-    background-image: url('../assets/img/welcome-bg.jpg');
-
-    h2 {
-        padding: 35px 40px;
-        text-align: center;
-        font-family: $ff-forum;
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 50px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        background-color: $c-light-dark;
-    }
-}
+// Components
+@import './components/welcome';
+@import './components/about';
+@import './components/buttons';
 
 .title {
     position: relative;
@@ -117,57 +56,4 @@ a:hover {
 .layout-3-column {
     display: flex;
     // justify-content: space-between;
-}
-
-.about {
-    padding: 20px 20px 35px;
-
-    .subtitle {
-        margin-bottom: 20px;
-    }
-
-    &__image {
-        /* display: block; */
-        width: 450px;
-        height: 560px;
-    }
-
-    &__dots {
-        display: flex;
-        margin-top: 35px;
-        justify-content: center;
-    }
-
-    .layout-3-column {
-        gap: 25px;
-        overflow: hidden;
-    }
-}
-
-.dot {
-    display: flex;
-    padding: 5px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-
-    > div {
-        width: 16px;
-        height: 16px;
-        background-color: $c-light-dark;
-        border-radius: 50%;
-    }
-
-    &:not(&_active):hover {
-        opacity: 0.7;
-    }
-
-    &_active {
-        cursor: auto;
-        opacity: 1;
-
-        > div {
-            background-color: $c-colored;
-        }
-    }
 }

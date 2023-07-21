@@ -1,16 +1,6 @@
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  color: #000000;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+a,
+a:visited, .block2, .block1 {
+  transition: all 0.3s ease-out;
 }
 
 @font-face {
@@ -31,9 +21,46 @@ body {
   font-weight: 700;
   font-style: normal;
 }
-.wrapper {
-  width: 1440px;
-  margin: 0 auto;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font: normal 400 30px/50px "Forum", cursive;
+  letter-spacing: 0.6px;
+}
+
+h3 {
+  color: #bb945f;
+  font-family: "Forum", cursive;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+h4 {
+  color: #000000;
+  font-family: "Forum", cursive;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
 }
 
 a,
@@ -46,35 +73,9 @@ a:hover {
   color: #bb945f;
 }
 
-.header {
-  display: flex;
-  padding: 20px;
-  justify-content: space-between;
-  color: #ffffff;
-  background-color: #0c0c0e;
-}
-.header h1 {
-  font-family: "Forum", cursive;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 50px;
-  letter-spacing: 0.6px;
-}
-.header__menu {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-.header__navigation {
-  display: flex;
-  gap: 30px;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 50px;
-  list-style: none;
-  letter-spacing: 0.08px;
+.icon {
+  display: inline-block;
+  cursor: pointer;
 }
 
 .icon_profile {
@@ -84,22 +85,102 @@ a:hover {
   background-image: url("../assets/img/icon-profile.svg");
 }
 
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  color: #ffffff;
+}
+.header__wrapper {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: #0c0c0e;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.navigation {
+  display: flex;
+  gap: 30px;
+  font: normal 400 20px/50px "Inter", sans-serif;
+  list-style: none;
+  letter-spacing: 0.08px;
+}
+
 .welcome {
   padding: 220px 840px 160px 0;
   color: #ffffff;
   background-image: url("../assets/img/welcome-bg.jpg");
+  background-size: cover;
 }
 .welcome h2 {
   padding: 35px 40px;
   text-align: center;
-  font-family: "Forum", cursive;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 50px;
+  font: normal 400 40px/50px "Forum", cursive;
   letter-spacing: 3px;
   text-transform: uppercase;
   background-color: #0c0c0e;
+}
+
+.about__wrapper {
+  padding: 20px 20px 35px;
+}
+.about .subtitle {
+  margin-bottom: 20px;
+}
+.about__image {
+  /* display: block; */
+  width: 450px;
+  height: 560px;
+}
+.about__dots {
+  display: flex;
+  margin-top: 35px;
+  justify-content: center;
+}
+.about .layout-3-column {
+  gap: 25px;
+  overflow: hidden;
+}
+
+.dot {
+  width: 26px;
+  height: 26px;
+  background-color: #0c0c0e;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  cursor: pointer;
+}
+.dot:not(.dot_active):hover {
+  opacity: 0.7;
+}
+.dot_active {
+  cursor: auto;
+  opacity: 1;
+  background-color: #bb945f;
+}
+
+.button {
+  padding: 9px 27px;
+  color: #0c0c0e;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: 1px solid #0c0c0e;
+}
+.button_colored {
+  color: #bb945f;
+  border: 1px solid #bb945f;
 }
 
 .title {
@@ -136,51 +217,6 @@ a:hover {
 
 .layout-3-column {
   display: flex;
-}
-
-.about {
-  padding: 20px 20px 35px;
-}
-.about .subtitle {
-  margin-bottom: 20px;
-}
-.about__image {
-  /* display: block; */
-  width: 450px;
-  height: 560px;
-}
-.about__dots {
-  display: flex;
-  margin-top: 35px;
-  justify-content: center;
-}
-.about .layout-3-column {
-  gap: 25px;
-  overflow: hidden;
-}
-
-.dot {
-  display: flex;
-  padding: 5px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.dot > div {
-  width: 16px;
-  height: 16px;
-  background-color: #0c0c0e;
-  border-radius: 50%;
-}
-.dot:not(.dot_active):hover {
-  opacity: 0.7;
-}
-.dot_active {
-  cursor: auto;
-  opacity: 1;
-}
-.dot_active > div {
-  background-color: #bb945f;
 }
 
 /*# sourceMappingURL=style.css.map */
