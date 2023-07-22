@@ -1,4 +1,4 @@
-a,
+.button, a,
 a:visited, .block2, .block1 {
   transition: all 0.3s ease-out;
 }
@@ -41,28 +41,6 @@ h1 {
   letter-spacing: 0.6px;
 }
 
-h3 {
-  color: #bb945f;
-  font-family: "Forum", cursive;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-}
-
-h4 {
-  color: #000000;
-  font-family: "Forum", cursive;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-}
-
 a,
 a:visited {
   color: #ffffff;
@@ -83,6 +61,30 @@ a:hover {
   width: 28px;
   height: 28px;
   background-image: url("../assets/img/icon-profile.svg");
+}
+
+.button {
+  min-width: 75px;
+  padding: 8px 0;
+  color: #0c0c0e;
+  text-align: center;
+  font: normal 700 10px/12px "Inter", sans-serif;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid #0c0c0e;
+  cursor: pointer;
+}
+.button:hover {
+  opacity: 0.7;
+}
+.button:disabled {
+  opacity: 1;
+  cursor: unset;
+}
+.button_colored {
+  color: #bb945f;
+  border-color: #bb945f;
 }
 
 .wrapper {
@@ -165,22 +167,123 @@ a:hover {
   background-color: #bb945f;
 }
 
-.button {
-  padding: 9px 27px;
-  color: #0c0c0e;
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 1px;
-  border-radius: 2px;
-  border: 1px solid #0c0c0e;
+.favorites__wrapper {
+  padding: 20px 20px 40px;
 }
-.button_colored {
-  color: #bb945f;
-  border: 1px solid #bb945f;
+.favorites__subtitle {
+  margin-top: 40px;
+  font: normal 700 20px/24px "Inter", sans-serif;
+}
+.favorites__seasons {
+  max-width: 700px;
+  margin-top: 40px;
+}
+.favorites__books {
+  display: grid;
+  max-height: 1150px;
+  margin-top: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 220px;
+  overflow: hidden;
+}
+
+.seasons {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.seasons > li {
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+}
+.seasons > li > input {
+  width: 13px;
+  height: 13px;
+  margin: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #000000;
+  cursor: pointer;
+}
+.seasons > li > input:checked {
+  background: #000000;
+}
+.seasons > li > label {
+  padding-left: 20px;
+  font: normal 400 20px/24px "Inter", sans-serif;
+  cursor: pointer;
+}
+.seasons > li input:checked + label {
+  font-weight: 700;
+}
+.seasons__winter {
+  flex: 0 0 194px;
+}
+.seasons__spring {
+  flex: 0 0 189px;
+}
+.seasons__summer {
+  flex: 0 0 206px;
+}
+.seasons__autumn {
+  flex: 0 0 111px;
+}
+
+.book {
+  position: relative;
+  padding-right: 40px;
+}
+.book__frame {
+  display: flex;
+  height: 100%;
+  padding: 14px 19px 14px 19px;
+  flex-direction: column;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+.book__label {
+  position: relative;
+  font: normal 400 20px/40px "Forum", cursive;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.book__label::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  border-bottom: 1px solid #bb945f;
+}
+.book__title {
+  margin-top: 20px;
+  font: normal 700 15px/40px "Inter", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.book__author {
+  text-transform: capitalize;
+}
+.book__text {
+  margin-top: 20px;
+  margin-right: 153px;
+  flex-grow: 1;
+  font: normal 400 15px/40px "Inter", sans-serif;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.book__button {
+  margin-top: 15px;
+}
+.book__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
 }
 
 .title {

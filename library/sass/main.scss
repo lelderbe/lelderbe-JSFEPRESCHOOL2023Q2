@@ -8,6 +8,7 @@
 @import './fonts.scss';
 @import './base/base';
 @import './base/icons';
+@import './base/buttons';
 
 // Layouts
 @import './layout/wrapper';
@@ -16,7 +17,7 @@
 // Components
 @import './components/welcome';
 @import './components/about';
-@import './components/buttons';
+@import './components/favorites';
 
 .title {
     position: relative;

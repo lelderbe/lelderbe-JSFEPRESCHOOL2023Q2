@@ -28,18 +28,20 @@
                 <span class="icon icon_profile"></span>
             </div>
     </header>
+
     <main>
         <div class="wrapper">
             <section class="welcome">
                 <h2>Welcome&nbsp; <br> to the Brooklyn <br> Library</h2>
             </section>
         </div>
+
         <section class="about" id="about">
             <div class="wrapper about__wrapper">
                 <h2 class="title title_underline">About</h2>
-                <p class="subtitle">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee
-                    shop
-                    inside</p>
+                <p class="subtitle">
+                    The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
+                </p>
                 <div class="layout-3-column">
                     <img class="about__image" src="./assets/img/about/image-1.jpg" alt="">
                     <img class="about__image" src="./assets/img/about/image-2.jpg" alt="">
@@ -54,87 +56,220 @@
                 </div>
             </div>
         </section>
+
         <section class="favorites" id="favorites">
-            <div class="wrapper">
-                <h2 class="title">Favorites</h2>
-                <p>Pick favorites of season</p>
-                <div class="favorites__choise">
-                    <ul>
-                        <li>
-                            <label><input type="radio" name="radio" checked><span>Winter</span></label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="radio"><span>Spring</span></label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="radio"><span>Summer</span></label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="radio"><span>Autumn</span></label>
-                        </li>
-                    </ul>
-                </div>
-                <!-- <div class="favorites__books"></div> -->
-                <div class="layout-2-column">
-                    <div class="book">
-                        <div class="book__label">Staff Picks</div>
-                        <div class="book__title">
-                            The Book Eaters<br>
-                            By Sunyi Dean
+            <div class="wrapper favorites__wrapper">
+                <h2 class="title title_underline">Favorites</h2>
+                <p class="favorites__subtitle">Pick favorites of season</p>
+                <ul class="seasons favorites__seasons">
+                    <li class="seasons__winter">
+                        <input type="radio" name="season" id="seasons-winter" checked>
+                        <label for="seasons-winter">Winter</label>
+                    </li>
+                    <li class="seasons__spring">
+                        <input type="radio" name="season" id="seasons-spring">
+                        <label for="seasons-spring">Spring</label>
+                    </li>
+                    <li class="seasons__summer">
+                        <input type="radio" name="season" id="seasons-summer">
+                        <label for="seasons-summer">Summer</label>
+                    </li>
+                    <li class="seasons__autumn">
+                        <input type="radio" name="season" id="seasons-autumn">
+                        <label for="seasons-autumn">Autumn</label>
+                    </li>
+                </ul>
+                <div class="favorites__books">
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                The Book Eaters<br>
+                                <span class="book__author">By Sunyi Dean</span>
+                            </h3>
+                            <p class="book__text">
+                                An unusual sci-fi story about a book eater woman who tries desperately to save her
+                                dangerous
+                                mind-eater son from tradition and certain death. Complete with dysfunctional family
+                                values,
+                                light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
                         </div>
-                        <div class="book__desc">
-                            An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous
-                            mind-eater son from tradition and certain death. Complete with dysfunctional family values,
-                            light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                        <img class="book__image" src="./assets/img/favorites/book-01.jpg" alt="The Book Eaters">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                Cackle<br>
+                                <span class="book__author">By Rachel Harrison</span>
+                            </h3>
+                            <p class="book__text">
+                                Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no
+                                further than here - where a woman recovering from a breakup moves to a quaint town in
+                                upstate New York and befriends a beautiful witch.
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
                         </div>
-                        <button class="button">Buy</button>
-                        <img class="book__image" src="" alt="">
-                    </div>
-                    <div class="book">
-                        <div class="book__label">Staff Picks</div>
-                        <div class="book__title">
-                            Cackle<br>
-                            By Rachel Harrison
+                        <img class="book__image" src="./assets/img/favorites/book-02.jpg" alt="Cackle">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                Dante: Poet of the Secular World<br>
+                                <span class="book__author">By Erich Auerbach</span>
+                            </h3>
+                            <p class="book__text">
+                                Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and
+                                philosophy in general, arguing for Dante's uniqueness as one who raised the individual
+                                and
+                                his drama of soul into something of divine significance—an inspired introduction to
+                                Dante's
+                                main themes.
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
                         </div>
-                        <div class="book__desc">
-                            Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no
-                            further than here - where a woman recovering from a breakup moves to a quaint town in
-                            upstate New York and befriends a beautiful witch.
+                        <img class="book__image" src="./assets/img/favorites/book-03.jpg"
+                            alt="Dante: Poet of the Secular World">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                The Last Queen<br>
+                                <span class="book__author">By Clive Irving</span>
+                            </h3>
+                            <p class="book__text">
+                                A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how
+                                the
+                                Windsors have evolved and thrived as the modern world has changed around them.
+                            </p>
+                            <div class="book__button">
+                                <button class="button button_colored" disabled>Own</button>
+                            </div>
                         </div>
-                        <button class="button">Buy</button>
-                        <img class="book__image" src="" alt="">
-                    </div>
-                    <div class="book">
-                        <div class="book__label">Staff Picks</div>
-                        <div class="book__title">
-                            Dante: Poet of the Secular World<br>
-                            By Erich Auerbach
+                        <img class="book__image" src="./assets/img/favorites/book-04.jpg" alt="The Last Queen">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                The Body<br>
+                                <span class="book__author">By Stephen King</span>
+                            </h3>
+                            <p class="book__text">
+                                Powerful novel that takes you back to a nostalgic time, exploring both the beauty and
+                                danger and loss of innocence that is youth.
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
                         </div>
-                        <div class="book__desc">
-                            Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and
-                            philosophy in general, arguing for Dante's uniqueness as one who raised the individual and
-                            his drama of soul into something of divine significance—an inspired introduction to Dante's
-                            main themes.
+                        <img class="book__image" src="./assets/img/favorites/book-05.jpg" alt="The Body">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                Carry: A Memoir of Survival on Stolen Land<br>
+                                <span class="book__author">By Toni Jenson</span>
+                            </h3>
+                            <p class="book__text">
+                                This memoir about the author's relationship with gun violence feels both expansive and
+                                intimate, resulting in a lyrical indictment of the way things are.
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
                         </div>
-                        <button class="button">Buy</button>
-                        <img class="book__image" src="" alt="">
-                    </div>
-                    <div class="book">
-                        <div class="book__label">Staff Picks</div>
-                        <div class="book__title">
-                            The Last Queen<br>
-                            By Clive Irving
+                        <img class="book__image" src="./assets/img/favorites/book-06.jpg"
+                            alt="Carry: A Memoir of Survival on Stolen Land">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                Days of Distraction<br>
+                                <span class="book__author">By Alexandra Chang</span>
+                            </h3>
+                            <p class="book__text">
+                                A sardonic view of Silicon Valley culture, a meditation on race, and a journal of
+                                displacement and belonging, all in one form-defying package of spare prose.
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
                         </div>
-                        <div class="book__desc">
-                            A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the
-                            Windsors have evolved and thrived as the modern world has changed around them.
+                        <img class="book__image" src="./assets/img/favorites/book-07.jpg" alt="Days of Distraction">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                Dominicana<br>
+                                <span class="book__author">By Angie Cruz</span>
+                            </h3>
+                            <p class="book__text">
+                                A fascinating story of a teenage girl who marries a man twice her age with the promise
+                                to bring her to America. Her marriage is an opportunity for her family to eventually
+                                immigrate. For fans of Isabel Allende and Julia Alvarez.
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
                         </div>
-                        <button class="button button_colored">Own</button>
-                        <img class="book__image" src="" alt="">
-                    </div>
+                        <img class="book__image" src="./assets/img/favorites/book-08.jpg" alt="Dominicana">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                Crude: A Memoir<br>
+                                <span class="book__author">By Pablo Fajardo & ​​Sophie Tardy-Joubert</span>
+                            </h3>
+                            <p class="book__text">
+                                Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of
+                                indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil
+                                fields did to the Amazon and her people
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
+                        </div>
+                        <img class="book__image" src="./assets/img/favorites/book-09.jpg" alt="Crude: A Memoir">
+                    </article>
+                    <article class="book">
+                        <div class="book__frame">
+                            <div class="book__label">Staff Picks</div>
+                            <h3 class="book__title">
+                                Let My People Go Surfing<br>
+                                <span class="book__author">By Yvon Chouinard</span>
+                            </h3>
+                            <p class="book__text">
+                                Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence
+                                from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go
+                                Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business
+                                Unusual.
+                            </p>
+                            <div class="book__button">
+                                <button class="button">Buy</button>
+                            </div>
+                        </div>
+                        <img class="book__image" src="./assets/img/favorites/book-10.jpg"
+                            alt="Let My People Go Surfing">
+                    </article>
                 </div>
             </div>
         </section>
+
         <section class="shop" id="shop">
             <div class="wrapper">
                 <h2 class="title">Coffee shop</h2>

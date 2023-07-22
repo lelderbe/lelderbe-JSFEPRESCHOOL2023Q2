@@ -1,0 +1,27 @@
+.button {
+    min-width: 75px;
+    padding: 8px 0;
+    color: $c-light-dark;
+    text-align: center;
+    font: normal 700 10px / 12px $ff-default;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border-radius: 2px;
+    border: 1px solid $c-light-dark;
+    cursor: pointer;
+    @extend %transition;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:disabled {
+        opacity: 1;
+        cursor: unset;
+    }
+
+    &_colored {
+        color: $c-colored;
+        border-color: $c-colored;
+    }
+}

@@ -1,0 +1,140 @@
+.favorites {
+    &__wrapper {
+        padding: 20px 20px 40px;
+    }
+
+    &__subtitle {
+        margin-top: 40px;
+        font: normal 700 20px / 24px $ff-default;
+    }
+
+    &__seasons {
+        max-width: 700px;
+        margin-top: 40px;
+    }
+
+    &__books {
+        display: grid;
+        max-height: 1150px;
+        margin-top: 40px;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 220px;
+        overflow: hidden;
+    }
+}
+
+.seasons {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    > li {
+        display: flex;
+        align-items: baseline;
+        cursor: pointer;
+
+        > input {
+            width: 13px;
+            height: 13px;
+            margin: 2px;
+            appearance: none;
+            -webkit-appearance: none;
+            background: $c-background;
+            border-radius: 50%;
+            border: 2px solid $c-background;
+            box-shadow: 0 0 0 2px $c-text;
+            cursor: pointer;
+        }
+
+        > input:checked {
+            background: $c-text;
+        }
+
+        > label {
+            padding-left: 20px;
+            font: normal 400 20px / 24px $ff-default;
+            cursor: pointer;
+        }
+
+        input:checked + label {
+            font-weight: 700;
+        }
+    }
+
+    &__winter {
+        flex: 0 0 194px;
+    }
+
+    &__spring {
+        flex: 0 0 189px;
+    }
+
+    &__summer {
+        flex: 0 0 206px;
+    }
+
+    &__autumn {
+        flex: 0 0 111px;
+    }
+}
+
+.book {
+    position: relative;
+    padding-right: 40px;
+
+    &__frame {
+        display: flex;
+        height: 100%;
+        padding: 14px 19px 14px 19px;
+        flex-direction: column;
+        border: 1px solid $c-text;
+        background: $c-background;
+    }
+
+    &__label {
+        position: relative;
+        font: normal 400 20px / 40px $ff-forum;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            border-bottom: 1px solid $c-colored;
+        }
+    }
+
+    &__title {
+        margin-top: 20px;
+        font: normal 700 15px / 40px $ff-default;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    &__author {
+        text-transform: capitalize;
+    }
+
+    &__text {
+        margin-top: 20px;
+        margin-right: 153px;
+        flex-grow: 1;
+        font: normal 400 15px / 40px $ff-default;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+    }
+
+    &__button {
+        margin-top: 15px;
+    }
+
+    &__image {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 200px;
+    }
+}
