@@ -18,21 +18,19 @@
 @import './components/welcome';
 @import './components/about';
 @import './components/favorites';
+@import './components/shop';
 
 .title {
     position: relative;
-    padding-bottom: 21px;
     color: $c-light-dark;
-    font-family: $ff-forum;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
+    font: normal 400 40px / 40px $ff-forum;
     letter-spacing: 2px;
     text-transform: capitalize;
     text-align: center;
 
     &_underline {
+        padding-bottom: 21px;
+
         &:after {
             content: '';
             position: absolute;
@@ -43,15 +41,24 @@
             border-bottom: 1px solid $c-light-dark;
         }
     }
+
+    &_colored {
+        color: $c-colored;
+    }
+
+    &_left {
+        text-align: left;
+    }
+
+    &_right {
+        text-align: right;
+    }
 }
 
 .subtitle {
     margin: 40px 0;
+    font: normal 400 20px / 40px $ff-default;
     text-align: center;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
 }
 
 .layout-3-column {

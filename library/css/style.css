@@ -286,18 +286,58 @@ a:hover {
   width: 200px;
 }
 
+.shop__wrapper {
+  padding: 20px 20px 40px 20px;
+}
+.shop__subtitle {
+  margin-top: 40px;
+  letter-spacing: 2px;
+}
+.shop__menus {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  list-style: none;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.menu__item {
+  display: flex;
+  align-items: center;
+  gap: 59px;
+}
+.menu__name {
+  flex: 1;
+  font: normal 400 20px/40px "Inter", sans-serif;
+  white-space: nowrap;
+}
+.menu__line {
+  width: 100px;
+  border-bottom: 1px solid #bb945f;
+}
+.menu__price {
+  font: normal 400 20px/40px "Forum", cursive;
+  text-align: right;
+}
+.menu_right {
+  text-align: right;
+}
+
 .title {
   position: relative;
-  padding-bottom: 21px;
   color: #0c0c0e;
-  font-family: "Forum", cursive;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
+  font: normal 400 40px/40px "Forum", cursive;
   letter-spacing: 2px;
   text-transform: capitalize;
   text-align: center;
+}
+.title_underline {
+  padding-bottom: 21px;
 }
 .title_underline:after {
   content: "";
@@ -308,14 +348,20 @@ a:hover {
   transform: translateX(-50%);
   border-bottom: 1px solid #0c0c0e;
 }
+.title_colored {
+  color: #bb945f;
+}
+.title_left {
+  text-align: left;
+}
+.title_right {
+  text-align: right;
+}
 
 .subtitle {
   margin: 40px 0;
+  font: normal 400 20px/40px "Inter", sans-serif;
   text-align: center;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
 }
 
 .layout-3-column {

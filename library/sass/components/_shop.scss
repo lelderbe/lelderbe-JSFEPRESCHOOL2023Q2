@@ -1,0 +1,50 @@
+.shop {
+    &__wrapper {
+        padding: 20px 20px 40px 20px;
+    }
+
+    &__subtitle {
+        margin-top: 40px;
+        letter-spacing: 2px;
+    }
+
+    &__menus {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    list-style: none;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 59px;
+    }
+
+    &__name {
+        flex: 1;
+        font: normal 400 20px / 40px $ff-default;
+        white-space: nowrap;
+    }
+
+    &__line {
+        width: 100px;
+        border-bottom: 1px solid $c-colored;
+    }
+
+    &__price {
+        font: normal 400 20px / 40px $ff-forum;
+        text-align: right;
+    }
+
+    &_right {
+        text-align: right;
+    }
+}
