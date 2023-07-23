@@ -86,6 +86,11 @@ a:hover {
   color: #bb945f;
   border-color: #bb945f;
 }
+.button_big {
+  padding: 9px 40px;
+  font-size: 20px;
+  line-height: 24px;
+}
 
 .wrapper {
   width: 1440px;
@@ -363,6 +368,103 @@ a:hover {
 }
 .contacts-info__map {
   width: 696px;
+}
+
+.card__wrapper {
+  padding: 20px 20px 40px 20px;
+}
+.card .title {
+  padding-left: 2px;
+}
+.card__cards {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.form {
+  max-width: 600px;
+}
+.form__block-title {
+  color: #000;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: center;
+}
+.form__box {
+  margin-top: 30px;
+  padding: 17px 17px 27px;
+  border: 3px solid #bb945f;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.form__inputs {
+  padding: 20px 20px 0;
+  background: #bb945f;
+}
+.form__title {
+  margin-bottom: 20px;
+  color: #000;
+  font-family: Forum;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 166.667% */
+  letter-spacing: 0.6px;
+}
+.form input {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 8px 20px;
+  color: #000000;
+  font-family: Forum;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 166.667% */
+  letter-spacing: 0.6px;
+  border-radius: 10px;
+  background: #fff;
+  border: none;
+}
+.form input::placeholder {
+  color: #8e8e8e;
+}
+.form__button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.auth__title {
+  color: #000;
+  text-align: right;
+  font-family: Forum;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+}
+.auth__text {
+  margin-top: 35px;
+  color: #000;
+  text-align: right;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+  letter-spacing: 0.4px;
+}
+.auth__buttons {
+  margin-top: 35px;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
 }
 
 .title {
