@@ -91,11 +91,11 @@ a:hover {
   border: 1px solid #0c0c0e;
   cursor: pointer;
 }
-.button:hover {
-  opacity: 0.7;
+.button:enabled:hover {
+  border-color: #bb945f;
+  background-color: #bb945f;
 }
 .button:disabled {
-  opacity: 1;
   cursor: unset;
 }
 .button_colored {
@@ -253,11 +253,9 @@ a:hover {
 }
 .favorites__books {
   display: grid;
-  max-height: 1150px;
   margin-top: 40px;
   grid-template-columns: 1fr 1fr;
   gap: 40px 220px;
-  overflow: hidden;
 }
 
 .seasons {
@@ -573,6 +571,10 @@ a:hover {
 
 .layout-3-column {
   display: flex;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

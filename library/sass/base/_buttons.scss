@@ -11,12 +11,13 @@
     cursor: pointer;
     @extend %transition;
 
-    &:hover {
-        opacity: 0.7;
+    &:enabled:hover {
+        border-color: $c-colored;
+        background-color: $c-colored;
     }
 
     &:disabled {
-        opacity: 1;
+        // opacity: 1;
         cursor: unset;
     }
 
