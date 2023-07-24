@@ -1,11 +1,29 @@
 .icon {
-    display: inline-block;
+    display: block;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
+    @extend %transition;
+
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 .icon_profile {
-    display: block;
     width: 28px;
     height: 28px;
-    background-image: url('../assets/img/icon-profile.svg');
+    background-image: url('../assets/img/icons/icon-profile.svg');
+}
+
+.icon_twitter {
+    background-image: url('../assets/img/icons/icon-twitter.svg');
+}
+
+.icon_instagram {
+    background-image: url('../assets/img/icons/icon-instagram.svg');
+}
+
+.icon_facebook {
+    background-image: url('../assets/img/icons/icon-facebook.svg');
 }
