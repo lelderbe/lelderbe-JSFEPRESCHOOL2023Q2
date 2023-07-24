@@ -1,5 +1,5 @@
-.button, .icon, a,
-a:visited, .block2, .block1 {
+a,
+a:visited, .button, .icon {
   transition: all 0.3s ease-out;
 }
 
@@ -41,14 +41,44 @@ h1 {
   letter-spacing: 0.6px;
 }
 
-a,
-a:visited {
-  color: #ffffff;
-  text-decoration: none;
+.title {
+  position: relative;
+  color: #0c0c0e;
+  font: normal 400 40px/40px "Forum", cursive;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.title_underline {
+  padding-bottom: 21px;
+}
+.title_underline:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50px;
+  transform: translateX(-50%);
+  border-bottom: 1px solid #0c0c0e;
+}
+.title_colored {
+  color: #bb945f;
+}
+.title_left {
+  text-align: left;
+}
+.title_right {
+  text-align: right;
 }
 
-a:hover {
-  color: #bb945f;
+.subtitle {
+  margin: 40px 0;
+  font: normal 400 20px/40px "Inter", sans-serif;
+  text-align: center;
+}
+
+.layout-3-column {
+  display: flex;
 }
 
 .icon {
@@ -83,8 +113,8 @@ a:hover {
   min-width: 75px;
   padding: 8px 0;
   color: #0c0c0e;
-  text-align: center;
   font: normal 700 10px/12px "Inter", sans-serif;
+  text-align: center;
   letter-spacing: 1px;
   background-color: transparent;
   border-radius: 2px;
@@ -127,17 +157,20 @@ a:hover {
   align-items: center;
   gap: 40px;
 }
-.navigation {
+
+.navigation > ul {
   display: flex;
   gap: 30px;
-  font: normal 400 20px/50px "Inter", sans-serif;
   list-style: none;
+  font: normal 400 20px/50px "Inter", sans-serif;
   letter-spacing: 0.08px;
 }
 
+.footer {
+  color: #ffffff;
+}
 .footer__wrapper {
   padding: 20px 20px 44px;
-  justify-content: space-between;
   background-color: #0c0c0e;
 }
 .footer__row {
@@ -146,13 +179,8 @@ a:hover {
   justify-content: space-between;
 }
 .footer__row > p {
-  color: #fff;
   text-align: right;
-  font-family: Inter;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 133.333% */
+  font: normal 400 15px/20px "Inter", sans-serif;
 }
 .footer__row > p:nth-child(odd) {
   text-align: left;
@@ -171,12 +199,7 @@ a:hover {
 .footer__credentials {
   display: flex;
   justify-content: space-between;
-  color: #fff;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 100% */
+  font: normal 400 20px/20px "Inter", sans-serif;
   letter-spacing: 2px;
   white-space: nowrap;
 }
@@ -188,9 +211,11 @@ a:hover {
 }
 
 .welcome {
-  padding: 220px 840px 160px 0;
   color: #ffffff;
-  background-image: url("../assets/img/welcome-bg.jpg");
+}
+.welcome__wrapper {
+  padding: 220px 840px 160px 0;
+  background-image: url("../assets/img/welcome/welcome-background.jpg");
   background-size: cover;
 }
 .welcome h2 {
@@ -208,8 +233,12 @@ a:hover {
 .about .subtitle {
   margin-bottom: 20px;
 }
-.about__image {
-  /* display: block; */
+.about__images {
+  display: flex;
+  gap: 25px;
+  overflow: hidden;
+}
+.about__images > img {
   width: 450px;
   height: 560px;
 }
@@ -217,10 +246,6 @@ a:hover {
   display: flex;
   margin-top: 35px;
   justify-content: center;
-}
-.about .layout-3-column {
-  gap: 25px;
-  overflow: hidden;
 }
 
 .dot {
@@ -236,7 +261,6 @@ a:hover {
 }
 .dot_active {
   cursor: auto;
-  opacity: 1;
   background-color: #bb945f;
 }
 
@@ -285,6 +309,7 @@ a:hover {
 }
 .seasons > li > label {
   padding-left: 20px;
+  flex-grow: 1;
   font: normal 400 20px/24px "Inter", sans-serif;
   cursor: pointer;
 }
@@ -349,6 +374,7 @@ a:hover {
 }
 .book__button {
   margin-top: 15px;
+  align-self: flex-start;
 }
 .book__image {
   position: absolute;
@@ -369,7 +395,10 @@ a:hover {
   justify-content: space-between;
 }
 
-.menu {
+.menu__title {
+  margin-bottom: 40px;
+}
+.menu__items {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -418,6 +447,9 @@ a:hover {
   letter-spacing: 2px;
   text-transform: capitalize;
 }
+.contacts-info a {
+  color: #000000;
+}
 .contacts-info__title {
   margin-bottom: 40px;
   font-weight: 700;
@@ -436,13 +468,13 @@ a:hover {
   width: 696px;
 }
 
-.card__wrapper {
+.libcard__wrapper {
   padding: 20px 20px 40px 20px;
 }
-.card .title {
+.libcard .title {
   padding-left: 2px;
 }
-.card__cards {
+.libcard__cards {
   display: flex;
   margin-top: 40px;
   justify-content: space-between;
@@ -452,12 +484,7 @@ a:hover {
   max-width: 600px;
 }
 .form__block-title {
-  color: #000;
-  font-family: Inter;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font: normal 400 30px/36px "Inter", sans-serif;
   letter-spacing: 0.6px;
   text-align: center;
 }
@@ -465,7 +492,7 @@ a:hover {
   margin-top: 30px;
   padding: 17px 17px 27px;
   border: 3px solid #bb945f;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .form__inputs {
@@ -474,12 +501,7 @@ a:hover {
 }
 .form__title {
   margin-bottom: 20px;
-  color: #000;
-  font-family: Forum;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 50px; /* 166.667% */
+  font: normal 400 30px/50px "Forum", cursive;
   letter-spacing: 0.6px;
 }
 .form input {
@@ -487,14 +509,10 @@ a:hover {
   margin-bottom: 25px;
   padding: 8px 20px;
   color: #000000;
-  font-family: Forum;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 50px; /* 166.667% */
+  font: normal 400 30px/50px "Forum", cursive;
   letter-spacing: 0.6px;
   border-radius: 10px;
-  background: #fff;
+  background: #ffffff;
   border: none;
 }
 .form input::placeholder {
@@ -506,71 +524,31 @@ a:hover {
 }
 
 .auth__title {
-  color: #000;
+  font: normal 400 30px/33px "Forum", cursive;
   text-align: right;
-  font-family: Forum;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   letter-spacing: 0.6px;
 }
 .auth__text {
   margin-top: 35px;
-  color: #000;
+  font: normal 400 20px/40px "Inter", sans-serif;
   text-align: right;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px; /* 200% */
   letter-spacing: 0.4px;
 }
 .auth__buttons {
-  margin-top: 35px;
   display: flex;
+  margin-top: 35px;
   gap: 20px;
   justify-content: flex-end;
 }
 
-.title {
-  position: relative;
-  color: #0c0c0e;
-  font: normal 400 40px/40px "Forum", cursive;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-  text-align: center;
+a,
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
 }
-.title_underline {
-  padding-bottom: 21px;
-}
-.title_underline:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 50px;
-  transform: translateX(-50%);
-  border-bottom: 1px solid #0c0c0e;
-}
-.title_colored {
+
+a:hover {
   color: #bb945f;
-}
-.title_left {
-  text-align: left;
-}
-.title_right {
-  text-align: right;
-}
-
-.subtitle {
-  margin: 40px 0;
-  font: normal 400 20px/40px "Inter", sans-serif;
-  text-align: center;
-}
-
-.layout-3-column {
-  display: flex;
 }
 
 .hide {

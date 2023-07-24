@@ -2,8 +2,8 @@
     min-width: 75px;
     padding: 8px 0;
     color: $c-light-dark;
+    font: normal 700 10px / 12px $ff-primary;
     text-align: center;
-    font: normal 700 10px / 12px $ff-default;
     letter-spacing: 1px;
     background-color: transparent;
     border-radius: 2px;
@@ -17,7 +17,6 @@
     }
 
     &:disabled {
-        // opacity: 1;
         cursor: unset;
     }
 

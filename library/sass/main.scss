@@ -4,8 +4,7 @@
 @import './abstracts/mixins';
 
 // Base
-// @import './base/normalize';
-@import './fonts.scss';
+@import './base/fonts';
 @import './base/base';
 @import './base/icons';
 @import './base/buttons';
@@ -21,52 +20,17 @@
 @import './components/favorites';
 @import './components/shop';
 @import './components/contacts';
-@import './components/card';
+@import './components/libcard';
 
-.title {
-    position: relative;
-    color: $c-light-dark;
-    font: normal 400 40px / 40px $ff-forum;
-    letter-spacing: 2px;
-    text-transform: capitalize;
-    text-align: center;
-
-    &_underline {
-        padding-bottom: 21px;
-
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 50px;
-            transform: translateX(-50%);
-            border-bottom: 1px solid $c-light-dark;
-        }
-    }
-
-    &_colored {
-        color: $c-colored;
-    }
-
-    &_left {
-        text-align: left;
-    }
-
-    &_right {
-        text-align: right;
-    }
+a,
+a:visited {
+    @extend %transition;
+    color: $c-light;
+    text-decoration: none;
 }
 
-.subtitle {
-    margin: 40px 0;
-    font: normal 400 20px / 40px $ff-default;
-    text-align: center;
-}
-
-.layout-3-column {
-    display: flex;
-    // justify-content: space-between;
+a:hover {
+    color: $c-colored;
 }
 
 .hide {

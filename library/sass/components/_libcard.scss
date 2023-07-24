@@ -1,11 +1,10 @@
-.card {
+.libcard {
     &__wrapper {
         padding: 20px 20px 40px 20px;
     }
 
     .title {
-        // correct bad design
-        padding-left: 2px;
+        padding-left: 2px; // correct design
     }
 
     &__cards {
@@ -19,12 +18,7 @@
     max-width: 600px;
 
     &__block-title {
-        color: #000;
-        font-family: Inter;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        font: normal 400 30px / 36px $ff-primary;
         letter-spacing: 0.6px;
         text-align: center;
     }
@@ -32,24 +26,19 @@
     &__box {
         margin-top: 30px;
         padding: 17px 17px 27px;
-        border: 3px solid #bb945f;
-        background: #fff;
+        border: 3px solid $c-colored;
+        background: $c-background;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
     &__inputs {
         padding: 20px 20px 0;
-        background: #bb945f;
+        background: $c-colored;
     }
 
     &__title {
         margin-bottom: 20px;
-        color: #000;
-        font-family: Forum;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 50px; /* 166.667% */
+        font: normal 400 30px / 50px $ff-special;
         letter-spacing: 0.6px;
     }
 
@@ -58,18 +47,14 @@
         margin-bottom: 25px;
         padding: 8px 20px;
         color: $c-text;
-        font-family: Forum;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 50px; /* 166.667% */
+        font: normal 400 30px / 50px $ff-special;
         letter-spacing: 0.6px;
         border-radius: 10px;
-        background: #fff;
+        background: $c-background;
         border: none;
 
         &::placeholder {
-            color: #8e8e8e;
+            color: $c-neutral;
         }
     }
 
@@ -81,31 +66,21 @@
 
 .auth {
     &__title {
-        color: #000;
+        font: normal 400 30px / 33px $ff-special;
         text-align: right;
-        font-family: Forum;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
         letter-spacing: 0.6px;
     }
 
     &__text {
         margin-top: 35px;
-        color: #000;
+        font: normal 400 20px / 40px $ff-primary;
         text-align: right;
-        font-family: Inter;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 40px; /* 200% */
         letter-spacing: 0.4px;
     }
 
     &__buttons {
-        margin-top: 35px;
         display: flex;
+        margin-top: 35px;
         gap: 20px;
         justify-content: flex-end;
     }

@@ -7,21 +7,21 @@
         margin-bottom: 20px;
     }
 
-    &__image {
-        /* display: block; */
-        width: 450px;
-        height: 560px;
+    &__images {
+        display: flex;
+        gap: 25px;
+        overflow: hidden;
+
+        > img {
+            width: 450px;
+            height: 560px;
+        }
     }
 
     &__dots {
         display: flex;
         margin-top: 35px;
         justify-content: center;
-    }
-
-    .layout-3-column {
-        gap: 25px;
-        overflow: hidden;
     }
 }
 
@@ -39,7 +39,6 @@
 
     &_active {
         cursor: auto;
-        opacity: 1;
         background-color: $c-colored;
     }
 }

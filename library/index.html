@@ -13,29 +13,28 @@
 <body>
     <header class="header">
         <div class="wrapper header__wrapper">
-            <div class="header__logo">
-                <h1>Brooklyn Public Library</h1>
-            </div>
+            <h1>Brooklyn Public Library</h1>
             <div class="header__menu">
-                <nav class="header__navigation">
-                    <ul class="navigation">
+                <nav class="navigation">
+                    <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#favorites">Favorites</a></li>
                         <li><a href="#shop">Coffee shop</a></li>
                         <li><a href="#contacts">Contacts</a></li>
-                        <li><a href="#card">Library Card</a></li>
+                        <li><a href="#libcard">Library Card</a></li>
                     </ul>
                 </nav>
                 <span class="icon icon_profile"></span>
             </div>
+        </div>
     </header>
 
     <main>
-        <div class="wrapper">
-            <section class="welcome">
+        <section class="welcome">
+            <div class="wrapper welcome__wrapper">
                 <h2>Welcome&nbsp; <br> to the Brooklyn <br> Library</h2>
-            </section>
-        </div>
+            </div>
+        </section>
 
         <section class="about" id="about">
             <div class="wrapper about__wrapper">
@@ -43,12 +42,12 @@
                 <p class="subtitle">
                     The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
                 </p>
-                <div class="layout-3-column">
-                    <img class="about__image" src="./assets/img/about/image-1.jpg" alt="">
-                    <img class="about__image" src="./assets/img/about/image-2.jpg" alt="">
-                    <img class="about__image" src="./assets/img/about/image-3.jpg" alt="">
-                    <img class="about__image" src="./assets/img/about/image-4.jpg" alt="">
-                    <img class="about__image" src="./assets/img/about/image-5.jpg" alt="">
+                <div class="about__images">
+                    <img src="./assets/img/about/about-01.jpg" alt="The Brooklyn Library">
+                    <img src="./assets/img/about/about-02.jpg" alt="The Brooklyn Library">
+                    <img src="./assets/img/about/about-03.jpg" alt="The Brooklyn Library">
+                    <img src="./assets/img/about/about-04.jpg" alt="The Brooklyn Library">
+                    <img src="./assets/img/about/about-05.jpg" alt="The Brooklyn Library">
                 </div>
                 <div class="about__dots">
                     <div class="dot dot_active"></div>
@@ -83,7 +82,7 @@
                 <div class="favorites__books">
                     <article class="book">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 The Book Eaters<br>
                                 <span class="book__author">By Sunyi Dean</span>
@@ -95,15 +94,13 @@
                                 values,
                                 light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-01.jpg" alt="The Book Eaters">
                     </article>
                     <article class="book">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Cackle<br>
                                 <span class="book__author">By Rachel Harrison</span>
@@ -113,15 +110,13 @@
                                 further than here - where a woman recovering from a breakup moves to a quaint town in
                                 upstate New York and befriends a beautiful witch.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-02.jpg" alt="Cackle">
                     </article>
                     <article class="book">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Dante: Poet of the Secular World<br>
                                 <span class="book__author">By Erich Auerbach</span>
@@ -134,16 +129,14 @@
                                 Dante's
                                 main themes.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-03.jpg"
                             alt="Dante: Poet of the Secular World">
                     </article>
                     <article class="book">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 The Last Queen<br>
                                 <span class="book__author">By Clive Irving</span>
@@ -153,15 +146,13 @@
                                 the
                                 Windsors have evolved and thrived as the modern world has changed around them.
                             </p>
-                            <div class="book__button">
-                                <button class="button button_colored" disabled>Own</button>
-                            </div>
+                            <button class="button book__button button_colored" disabled>Own</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-04.jpg" alt="The Last Queen">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 The Body<br>
                                 <span class="book__author">By Stephen King</span>
@@ -170,15 +161,13 @@
                                 Powerful novel that takes you back to a nostalgic time, exploring both the beauty and
                                 danger and loss of innocence that is youth.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-05.jpg" alt="The Body">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Carry: A Memoir of Survival on Stolen Land<br>
                                 <span class="book__author">By Toni Jenson</span>
@@ -187,16 +176,14 @@
                                 This memoir about the author's relationship with gun violence feels both expansive and
                                 intimate, resulting in a lyrical indictment of the way things are.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-06.jpg"
                             alt="Carry: A Memoir of Survival on Stolen Land">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Days of Distraction<br>
                                 <span class="book__author">By Alexandra Chang</span>
@@ -205,15 +192,13 @@
                                 A sardonic view of Silicon Valley culture, a meditation on race, and a journal of
                                 displacement and belonging, all in one form-defying package of spare prose.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-07.jpg" alt="Days of Distraction">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Dominicana<br>
                                 <span class="book__author">By Angie Cruz</span>
@@ -223,15 +208,13 @@
                                 to bring her to America. Her marriage is an opportunity for her family to eventually
                                 immigrate. For fans of Isabel Allende and Julia Alvarez.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-08.jpg" alt="Dominicana">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Crude: A Memoir<br>
                                 <span class="book__author">By Pablo Fajardo & ​​Sophie Tardy-Joubert</span>
@@ -241,15 +224,13 @@
                                 indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil
                                 fields did to the Amazon and her people
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-09.jpg" alt="Crude: A Memoir">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Let My People Go Surfing<br>
                                 <span class="book__author">By Yvon Chouinard</span>
@@ -260,16 +241,14 @@
                                 Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business
                                 Unusual.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-10.jpg"
                             alt="Let My People Go Surfing">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 The Octopus Museum: Poems<br>
                                 <span class="book__author">By Brenda Shaughnessy</span>
@@ -279,16 +258,14 @@
                                 after our current age of environmental destruction, racism, sexism, and divisive
                                 politics.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-11.jpg"
                             alt="The Octopus Museum: Poems">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Shark Dialogues: A Novel<br>
                                 <span class="book__author">By Kiana Davenport</span>
@@ -298,16 +275,14 @@
                                 Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of
                                 villains and dreamers, queens and revolutionaries, lepers and healers.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-12.jpg"
                             alt="Shark Dialogues: A Novel">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Casual Conversation<br>
                                 <span class="book__author">By Renia White</span>
@@ -317,15 +292,13 @@
                                 conversation and the casual - both what we say to each other and what we don't,
                                 examining the possibilities around how we construct and communicate identity.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-13.jpg" alt="Casual Conversation">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 The Great Fire<br>
                                 <span class="book__author">By Lou Ureneck</span>
@@ -335,15 +308,13 @@
                                 horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a
                                 quarter of a million refugees from the Armenian Genocide
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-14.jpg" alt="The Great Fire">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Rickey: The Life and Legend<br>
                                 <span class="book__author">By Howard Bryant</span>
@@ -353,16 +324,14 @@
                                 up! And what better way to prepare for it than reading the biography of one of the
                                 game's all-time greatest performers, the Man of Steal, Rickey Henderson?
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-15.jpg"
                             alt="Rickey: The Life and Legend">
                     </article>
                     <article class="book hide">
                         <div class="book__frame">
-                            <div class="book__label">Staff Picks</div>
+                            <p class="book__label">Staff Picks</p>
                             <h3 class="book__title">
                                 Slug: And Other Stories<br>
                                 <span class="book__author">By Megan Milks</span>
@@ -371,9 +340,7 @@
                                 Exes Tegan and Sara find themselves chained together by hairballs of codependency. A
                                 father and child experience the shared trauma of giving birth to gods from their wounds.
                             </p>
-                            <div class="book__button">
-                                <button class="button">Buy</button>
-                            </div>
+                            <button class="button book__button">Buy</button>
                         </div>
                         <img class="book__image" src="./assets/img/favorites/book-16.jpg" alt="Slug: And Other Stories">
                     </article>
@@ -391,72 +358,76 @@
                     you can try desserts from bakery.
                 </p>
                 <div class="shop__menus">
-                    <ul class="menu">
+                    <article class="menu">
                         <h3 class="menu__title title title_colored title_left">Coffee & Tea</h3>
-                        <li class="menu__item">
-                            <p class="menu__name">Cold Brew Coffee</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$3</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name">French Press Pot</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$5</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name">Espresso</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$2</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name">Cappuccino</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$4</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name">Hot tea</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$2</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name">Cold tea</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$2</p>
-                        </li>
-                    </ul>
-                    <ul class="menu">
+                        <ul class="menu__items">
+                            <li class="menu__item">
+                                <p class="menu__name">Cold Brew Coffee</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$3</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name">French Press Pot</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$5</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name">Espresso</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$2</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name">Cappuccino</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$4</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name">Hot tea</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$2</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name">Cold tea</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$2</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="menu">
                         <h3 class="menu__title title title_colored title_right">Desserts & Cakes</h3>
-                        <li class="menu__item">
-                            <p class="menu__name menu_right">Forest Gateau</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$16</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name menu_right">Blue Moon</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$16</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name menu_right">Truffle Cake</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$15</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name menu_right">Chocolate Cake</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$18</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name menu_right">Poet’s Dream Cake</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$16</p>
-                        </li>
-                        <li class="menu__item">
-                            <p class="menu__name menu_right">Pineapple Cake</p>
-                            <div class="menu__line"></div>
-                            <p class="menu__price">$14</p>
-                        </li>
-                    </ul>
+                        <ul class="menu__items">
+                            <li class="menu__item">
+                                <p class="menu__name menu_right">Forest Gateau</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$16</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name menu_right">Blue Moon</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$16</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name menu_right">Truffle Cake</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$15</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name menu_right">Chocolate Cake</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$18</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name menu_right">Poet’s Dream Cake</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$16</p>
+                            </li>
+                            <li class="menu__item">
+                                <p class="menu__name menu_right">Pineapple Cake</p>
+                                <div class="menu__line"></div>
+                                <p class="menu__price">$14</p>
+                            </li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
@@ -467,26 +438,34 @@
                 <div class="contacts__info">
                     <div class="contacts-info">
                         <p class="contacts-info__title">For all Library inquiries:</p>
-                        <p class="contacts-info__text">Please call (617) 730-2370</p>
-                        <p class="contacts-info__text">For TTY service, please call (617) 730-2370</p>
-                        <p class="contacts-info__text">Putterham Library: (617) 730-2385</p>
+                        <p class="contacts-info__text">
+                            Please call <a href="tel:6177302370">(617) 730-2370</a>
+                        </p>
+                        <p class="contacts-info__text">
+                            For TTY service, please call <a href="tel:6177302370">(617) 730-2370</a></p>
+                        <p class="contacts-info__text">
+                            Putterham Library: <a href="tel:6177302385">(617) 730-2385</a>
+                        </p>
                         <p class="contacts-info__position">Senior Staff</p>
-                        <p class="contacts-info__text">Library Director: <strong>Amanda Hirst</strong></p>
+                        <p class="contacts-info__text">Library Director:
+                            <strong><a href="mailto:AmandaHirst@gmail.com">Amanda Hirst</a></strong>
+                        </p>
                     </div>
-                    <img class="contacts-info__map" src="./assets/img/contacts-map.jpg" alt="Google map">
+                    <img class="contacts-info__map" src="./assets/img/contacts/contacts-map.jpg"
+                        alt="286 Cadman Plaza, New York, NY 11238, United States">
                 </div>
             </div>
         </section>
 
-        <section class="card" id="card">
-            <div class="wrapper card__wrapper">
+        <section class="libcard" id="libcard">
+            <div class="wrapper libcard__wrapper">
                 <h2 class="title title_underline">Digital Library Cards</h2>
-                <div class="card__cards">
-                    <form class="form" action="">
-                        <div class="form__block-title">Find your Library card</div>
+                <div class="libcard__cards">
+                    <form class="form" action="#">
+                        <p class="form__block-title">Find your Library card</p>
                         <div class="form__box">
                             <div class="form__inputs">
-                                <div class="form__title">Brooklyn Public Library</div>
+                                <p class="form__title">Brooklyn Public Library</p>
                                 <input type="text" name="name" placeholder="Reader's name">
                                 <input type="text" name="card" placeholder="Card number">
                             </div>
@@ -516,7 +495,7 @@
         <div class="wrapper footer__wrapper">
             <div class="footer__row">
                 <p>
-                    <a href="https://www.google.com/maps/search/286+Cadman+Plaza,+New+York,+NY+11238,+United+States/@40.6956337,-73.9932709,17z/data=!3m1!4b1?entry=ttu"
+                    <a href="https://www.google.com/maps/place/286+Cadman+Plaza+W,+Brooklyn,+NY+11201,+%D0%A1%D0%A8%D0%90/@40.6957715,-73.9917462,18.17z/data=!4m10!1m2!2m1!1s286+Cadman+Plaza,+New+York,+NY+11238,+United+States!3m6!1s0x89c25a49b649b8c3:0x6342a2291cea2e!8m2!3d40.6956458!4d-73.9912976!15sCjMyODYgQ2FkbWFuIFBsYXphLCBOZXcgWW9yaywgTlkgMTEyMzgsIFVuaXRlZCBTdGF0ZXOSAQpzdWJwcmVtaXNl4AEA!16s%2Fg%2F11s2lgz8ns?entry=ttu"
                         target="_blank">
                         286 Cadman Plaza, New York,<br>
                         NY 11238, United States

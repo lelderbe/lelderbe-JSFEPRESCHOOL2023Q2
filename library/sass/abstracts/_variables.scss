@@ -6,14 +6,12 @@ $c-light-dark: #0c0c0e;
 $c-neutral: #8e8e8e;
 $c-colored: #bb945f;
 
-$c-background: $c-light;
-$c-text: $c-dark;
-
 $ff-inter: 'Inter', sans-serif;
 $ff-forum: 'Forum', cursive;
 
-$ff-default: $ff-inter;
+// Abstractions
+$c-background: $c-light;
+$c-text: $c-dark;
 
-// $default-color-background: $c-light;
-// $default-color-text: $c-dark;
-// $default-font-family: $ff-inter;
+$ff-primary: $ff-inter;
+$ff-special: $ff-forum;

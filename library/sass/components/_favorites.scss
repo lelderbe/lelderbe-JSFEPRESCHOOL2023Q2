@@ -5,7 +5,7 @@
 
     &__subtitle {
         margin-top: 40px;
-        font: normal 700 20px / 24px $ff-default;
+        font: normal 700 20px / 24px $ff-primary;
     }
 
     &__seasons {
@@ -50,7 +50,8 @@
 
         > label {
             padding-left: 20px;
-            font: normal 400 20px / 24px $ff-default;
+            flex-grow: 1;
+            font: normal 400 20px / 24px $ff-primary;
             cursor: pointer;
         }
 
@@ -91,7 +92,7 @@
 
     &__label {
         position: relative;
-        font: normal 400 20px / 40px $ff-forum;
+        font: normal 400 20px / 40px $ff-special;
         letter-spacing: 2px;
         text-transform: capitalize;
 
@@ -107,7 +108,7 @@
 
     &__title {
         margin-top: 20px;
-        font: normal 700 15px / 40px $ff-default;
+        font: normal 700 15px / 40px $ff-primary;
         letter-spacing: 2px;
         text-transform: uppercase;
     }
@@ -120,13 +121,14 @@
         margin-top: 20px;
         margin-right: 153px;
         flex-grow: 1;
-        font: normal 400 15px / 40px $ff-default;
+        font: normal 400 15px / 40px $ff-primary;
         letter-spacing: 2px;
         text-transform: capitalize;
     }
 
     &__button {
         margin-top: 15px;
+        align-self: flex-start;
     }
 
     &__image {

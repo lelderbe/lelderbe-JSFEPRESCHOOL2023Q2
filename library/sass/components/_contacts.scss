@@ -4,8 +4,7 @@
     }
 
     .title {
-        // correct bad design
-        padding-left: 2px;
+        padding-left: 2px; // correct design
     }
 
     &__info {
@@ -18,9 +17,13 @@
 }
 
 .contacts-info {
-    font: normal 400 20px / 40px $ff-default;
+    font: normal 400 20px / 40px $ff-primary;
     letter-spacing: 2px;
     text-transform: capitalize;
+
+    a {
+        color: $c-dark;
+    }
 
     &__title {
         margin-bottom: 40px;

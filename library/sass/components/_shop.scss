@@ -15,12 +15,18 @@
 }
 
 .menu {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    list-style: none;
-    letter-spacing: 2px;
-    text-transform: capitalize;
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        list-style: none;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+    }
 
     &__item {
         display: flex;
@@ -30,7 +36,7 @@
 
     &__name {
         flex: 1;
-        font: normal 400 20px / 40px $ff-default;
+        font: normal 400 20px / 40px $ff-primary;
         white-space: nowrap;
     }
 
@@ -40,7 +46,7 @@
     }
 
     &__price {
-        font: normal 400 20px / 40px $ff-forum;
+        font: normal 400 20px / 40px $ff-special;
         text-align: right;
     }
 

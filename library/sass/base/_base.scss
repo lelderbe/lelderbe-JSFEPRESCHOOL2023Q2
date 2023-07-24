@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: $ff-default;
+    font-family: $ff-primary;
     color: $c-text;
 }
 
@@ -14,42 +14,52 @@ body {
 }
 
 h1 {
-    font: normal 400 30px / 50px $ff-forum;
+    font: normal 400 30px / 50px $ff-special;
     letter-spacing: 0.6px;
 }
 
-h2 {
+.title {
+    position: relative;
+    color: $c-light-dark;
+    font: normal 400 40px / 40px $ff-special;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: center;
+
+    &_underline {
+        padding-bottom: 21px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 50px;
+            transform: translateX(-50%);
+            border-bottom: 1px solid $c-light-dark;
+        }
+    }
+
+    &_colored {
+        color: $c-colored;
+    }
+
+    &_left {
+        text-align: left;
+    }
+
+    &_right {
+        text-align: right;
+    }
 }
 
-// h3 {
-//     color: $c-colored;
-//     font-family: $ff-forum;
-//     font-size: 40px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: 40px;
-//     letter-spacing: 2px;
-//     text-transform: capitalize;
-// }
-
-// h4 {
-//     color: $c-dark;
-//     font-family: $ff-forum;
-//     font-size: 20px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: 40px;
-//     letter-spacing: 2px;
-//     text-transform: capitalize;
-// }
-
-a,
-a:visited {
-    @extend %transition;
-    color: $c-light;
-    text-decoration: none;
+.subtitle {
+    margin: 40px 0;
+    font: normal 400 20px / 40px $ff-primary;
+    text-align: center;
 }
 
-a:hover {
-    color: $c-colored;
+.layout-3-column {
+    display: flex;
+    // justify-content: space-between;
 }
