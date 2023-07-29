@@ -1,4 +1,6 @@
 .favorites {
+    min-width: $desktop-content-width;
+
     &__wrapper {
         padding: 20px 20px 40px;
     }
@@ -79,6 +81,7 @@
 
 .book {
     position: relative;
+    max-height: 555px;
     padding-right: 40px;
 
     &__frame {
@@ -107,10 +110,13 @@
     }
 
     &__title {
+        min-height: 80px;
+        max-height: 80px;
         margin-top: 20px;
         font: normal 700 15px / 40px $ff-primary;
         letter-spacing: 2px;
         text-transform: uppercase;
+        overflow: hidden;
     }
 
     &__author {
@@ -124,6 +130,7 @@
         font: normal 400 15px / 40px $ff-primary;
         letter-spacing: 2px;
         text-transform: capitalize;
+        overflow: hidden;
     }
 
     &__button {

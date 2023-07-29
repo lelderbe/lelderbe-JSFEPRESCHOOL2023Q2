@@ -1,4 +1,5 @@
 .welcome {
+    min-width: $desktop-content-width;
     color: $c-light;
 
     &__wrapper {
