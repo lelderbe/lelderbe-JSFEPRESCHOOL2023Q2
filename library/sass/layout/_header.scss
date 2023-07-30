@@ -9,6 +9,12 @@
         background-color: $c-light-dark;
     }
 
+    h1 {
+        max-width: 500px;
+        max-height: 50px;
+        overflow: hidden;
+    }
+
     &__menu {
         display: flex;
         align-items: center;
@@ -24,5 +30,11 @@
         font: normal 400 20px / 50px $ff-primary;
         letter-spacing: 0.08px;
         white-space: nowrap;
+
+        > li {
+            max-width: 130px;
+            max-height: 50px;
+            overflow: hidden;
+        }
     }
 }

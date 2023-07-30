@@ -28,12 +28,16 @@
     }
 
     &__title {
+        max-height: 40px;
         margin-bottom: 40px;
         font-weight: 700;
+        overflow: hidden;
     }
 
     &__text {
+        max-height: 40px;
         margin: 20px 0;
+        overflow: hidden;
 
         > strong {
             font-weight: 700;
@@ -41,8 +45,10 @@
     }
 
     &__position {
+        max-height: 40px;
         margin-top: 40px;
         font-weight: 700;
+        overflow: hidden;
     }
 
     &__map {

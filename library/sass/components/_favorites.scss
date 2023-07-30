@@ -110,8 +110,8 @@
     }
 
     &__title {
-        min-height: 80px;
-        max-height: 80px;
+        min-height: 40px;
+        max-height: 40px;
         margin-top: 20px;
         font: normal 700 15px / 40px $ff-primary;
         letter-spacing: 2px;
@@ -120,7 +120,13 @@
     }
 
     &__author {
+        min-height: 40px;
+        max-height: 40px;
+        font: normal 700 15px / 40px $ff-primary;
+        letter-spacing: 2px;
         text-transform: capitalize;
+        overflow: hidden;
+
     }
 
     &__text {

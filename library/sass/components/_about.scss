@@ -30,9 +30,9 @@
 .dot {
     width: 26px;
     height: 26px;
-    background-color: $c-light-dark;
+    padding: 5px;
+    background: content-box $c-light-dark;
     border-radius: 50%;
-    border: 5px solid $c-background;
     cursor: pointer;
 
     &:not(&_active):hover {

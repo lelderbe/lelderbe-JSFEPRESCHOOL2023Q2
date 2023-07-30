@@ -153,6 +153,11 @@ h1 {
   justify-content: space-between;
   background-color: #0c0c0e;
 }
+.header h1 {
+  max-width: 500px;
+  max-height: 50px;
+  overflow: hidden;
+}
 .header__menu {
   display: flex;
   align-items: center;
@@ -166,6 +171,11 @@ h1 {
   font: normal 400 20px/50px "Inter", sans-serif;
   letter-spacing: 0.08px;
   white-space: nowrap;
+}
+.navigation > ul > li {
+  max-width: 130px;
+  max-height: 50px;
+  overflow: hidden;
 }
 
 .footer {
@@ -223,12 +233,14 @@ h1 {
   background-size: cover;
 }
 .welcome h2 {
+  max-height: 220px;
   padding: 35px 40px;
   text-align: center;
   font: normal 400 40px/50px "Forum", cursive;
   letter-spacing: 3px;
   text-transform: uppercase;
   background-color: #0c0c0e;
+  overflow: hidden;
 }
 
 .about {
@@ -258,9 +270,9 @@ h1 {
 .dot {
   width: 26px;
   height: 26px;
-  background-color: #0c0c0e;
+  padding: 5px;
+  background: content-box #0c0c0e;
   border-radius: 50%;
-  border: 5px solid #ffffff;
   cursor: pointer;
 }
 .dot:not(.dot_active):hover {
@@ -367,8 +379,8 @@ h1 {
   border-bottom: 1px solid #bb945f;
 }
 .book__title {
-  min-height: 80px;
-  max-height: 80px;
+  min-height: 40px;
+  max-height: 40px;
   margin-top: 20px;
   font: normal 700 15px/40px "Inter", sans-serif;
   letter-spacing: 2px;
@@ -376,7 +388,12 @@ h1 {
   overflow: hidden;
 }
 .book__author {
+  min-height: 40px;
+  max-height: 40px;
+  font: normal 700 15px/40px "Inter", sans-serif;
+  letter-spacing: 2px;
   text-transform: capitalize;
+  overflow: hidden;
 }
 .book__text {
   margin-top: 20px;
@@ -426,6 +443,7 @@ h1 {
 }
 .menu__item {
   display: flex;
+  max-width: 550px;
   align-items: center;
   gap: 59px;
 }
@@ -433,6 +451,7 @@ h1 {
   flex: 1;
   font: normal 400 20px/40px "Inter", sans-serif;
   white-space: nowrap;
+  overflow: hidden;
 }
 .menu__line {
   width: 100px;
@@ -472,18 +491,24 @@ h1 {
   color: #000000;
 }
 .contacts-info__title {
+  max-height: 40px;
   margin-bottom: 40px;
   font-weight: 700;
+  overflow: hidden;
 }
 .contacts-info__text {
+  max-height: 40px;
   margin: 20px 0;
+  overflow: hidden;
 }
 .contacts-info__text > strong {
   font-weight: 700;
 }
 .contacts-info__position {
+  max-height: 40px;
   margin-top: 40px;
   font-weight: 700;
+  overflow: hidden;
 }
 .contacts-info__map {
   width: 696px;
@@ -508,9 +533,11 @@ h1 {
   max-width: 600px;
 }
 .form__block-title {
+  max-height: 36px;
   font: normal 400 30px/36px "Inter", sans-serif;
   letter-spacing: 0.6px;
   text-align: center;
+  overflow: hidden;
 }
 .form__box {
   margin-top: 30px;
@@ -524,9 +551,11 @@ h1 {
   background: #bb945f;
 }
 .form__title {
+  max-height: 50px;
   margin-bottom: 20px;
   font: normal 400 30px/50px "Forum", cursive;
   letter-spacing: 0.6px;
+  overflow: hidden;
 }
 .form input {
   width: 100%;

@@ -20,9 +20,11 @@
     max-width: 600px;
 
     &__block-title {
+        max-height: 36px;
         font: normal 400 30px / 36px $ff-primary;
         letter-spacing: 0.6px;
         text-align: center;
+        overflow: hidden;
     }
 
     &__box {
@@ -39,9 +41,11 @@
     }
 
     &__title {
+        max-height: 50px;
         margin-bottom: 20px;
         font: normal 400 30px / 50px $ff-special;
         letter-spacing: 0.6px;
+        overflow: hidden;
     }
 
     input {
