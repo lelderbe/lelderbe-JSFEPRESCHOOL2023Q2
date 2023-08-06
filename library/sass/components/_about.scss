@@ -1,6 +1,10 @@
 .about {
     min-width: $desktop-content-width;
 
+    @media (max-width: $adaptive-pad-limit) {
+        min-width: $pad-content-width;
+    }
+
     &__wrapper {
         padding: 20px 20px 35px;
     }
@@ -10,9 +14,45 @@
     }
 
     &__images {
+        position: relative;
         display: flex;
         gap: 25px;
         overflow: hidden;
+
+        @media (max-width: $adaptive-pad-limit) {
+            padding: 0 139px;
+            gap: 139px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 57px;
+            top: 288.5px;
+            display: none;
+            width: 24px;
+            height: 24px;
+            background-image: url('../assets/img/icons/icon-carret-prev.svg');
+
+            @media (max-width: $adaptive-pad-limit) {
+                display: block;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 57px;
+            top: 288.5px;
+            display: none;
+            width: 24px;
+            height: 24px;
+            background-image: url('../assets/img/icons/icon-carret-next.svg');
+
+            @media (max-width: $adaptive-pad-limit) {
+                display: block;
+            }
+        }
 
         > img {
             width: 450px;
@@ -24,6 +64,10 @@
         display: flex;
         margin-top: 35px;
         justify-content: center;
+
+        @media (max-width: $adaptive-pad-limit) {
+            margin-top: 20px;
+        }
     }
 }
 

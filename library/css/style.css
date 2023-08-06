@@ -1,3 +1,62 @@
+.only-pad {
+  display: none;
+}
+@media all and (max-width: 1439px) {
+  .only-pad {
+    display: initial;
+  }
+}
+@media all and (max-width: 374px) {
+  .only-pad {
+    display: none;
+  }
+}
+
+@media all and (max-width: 1439px) {
+  .only-desk {
+    display: none !important;
+  }
+}
+
+.only-mobile {
+  display: none;
+}
+@media all and (max-width: 374px) {
+  .only-mobile {
+    display: initial;
+  }
+}
+
+.only-mobile-block {
+  display: none;
+}
+@media all and (max-width: 374px) {
+  .only-mobile-block {
+    display: block;
+  }
+}
+
+.non-desk {
+  display: none;
+}
+@media all and (max-width: 1439px) {
+  .non-desk {
+    display: initial;
+  }
+}
+
+@media all and (max-width: 374px) {
+  .non-mobile {
+    display: none;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1439px) {
+  .non-pad {
+    display: none;
+  }
+}
+
 a,
 a:visited, .button, .icon {
   transition: all 0.3s ease-out;
@@ -119,6 +178,14 @@ h1 {
 
 .icon_facebook {
   background-image: url("../assets/img/icons/icon-facebook.svg");
+}
+
+.icon_carret-left {
+  background-image: url("../assets/img/icons/icon-carret-left.svg");
+}
+
+.icon_carret-right {
+  background-image: url("../assets/img/icons/icon-carret-right.svg");
 }
 
 .button {
@@ -283,6 +350,11 @@ h1 {
 .about {
   min-width: 1440px;
 }
+@media (max-width: 1439px) {
+  .about {
+    min-width: 768px;
+  }
+}
 .about__wrapper {
   padding: 20px 20px 35px;
 }
@@ -290,9 +362,46 @@ h1 {
   margin-bottom: 20px;
 }
 .about__images {
+  position: relative;
   display: flex;
   gap: 25px;
   overflow: hidden;
+}
+@media (max-width: 1439px) {
+  .about__images {
+    padding: 0 139px;
+    gap: 139px;
+  }
+}
+.about__images::before {
+  content: "";
+  position: absolute;
+  left: 57px;
+  top: 288.5px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/img/icons/icon-carret-prev.svg");
+}
+@media (max-width: 1439px) {
+  .about__images::before {
+    display: block;
+  }
+}
+.about__images::after {
+  content: "";
+  position: absolute;
+  right: 57px;
+  top: 288.5px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/img/icons/icon-carret-next.svg");
+}
+@media (max-width: 1439px) {
+  .about__images::after {
+    display: block;
+  }
 }
 .about__images > img {
   width: 450px;
@@ -302,6 +411,11 @@ h1 {
   display: flex;
   margin-top: 35px;
   justify-content: center;
+}
+@media (max-width: 1439px) {
+  .about__dots {
+    margin-top: 20px;
+  }
 }
 
 .dot {
