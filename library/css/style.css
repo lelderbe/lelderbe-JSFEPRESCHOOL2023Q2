@@ -718,6 +718,11 @@ h1 {
 .libcard {
   min-width: 1440px;
 }
+@media (max-width: 1439px) {
+  .libcard {
+    min-width: 768px;
+  }
+}
 .libcard__wrapper {
   padding: 20px 20px 40px 20px;
 }
@@ -728,6 +733,13 @@ h1 {
   display: flex;
   margin-top: 40px;
   justify-content: space-between;
+}
+@media (max-width: 1439px) {
+  .libcard__cards {
+    flex-direction: column;
+    gap: 21px;
+    align-items: center;
+  }
 }
 
 .form {
@@ -777,22 +789,42 @@ h1 {
   text-align: center;
 }
 
+.auth {
+  display: flex;
+  max-width: 466px;
+  flex-direction: column;
+  gap: 35px;
+  align-items: flex-end;
+}
+@media (max-width: 1439px) {
+  .auth {
+    max-width: 600px;
+    gap: 40px;
+    align-items: center;
+  }
+}
 .auth__title {
   font: normal 400 30px/33px "Forum", cursive;
-  text-align: right;
   letter-spacing: 0.6px;
 }
+@media (max-width: 1439px) {
+  .auth__title {
+    text-align: center;
+  }
+}
 .auth__text {
-  margin-top: 35px;
   font: normal 400 20px/40px "Inter", sans-serif;
   text-align: right;
   letter-spacing: 0.4px;
 }
+@media (max-width: 1439px) {
+  .auth__text {
+    text-align: center;
+  }
+}
 .auth__buttons {
   display: flex;
-  margin-top: 35px;
   gap: 20px;
-  justify-content: flex-end;
 }
 
 a,
