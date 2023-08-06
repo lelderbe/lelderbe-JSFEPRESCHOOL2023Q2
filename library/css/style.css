@@ -582,18 +582,39 @@ h1 {
 .shop {
   min-width: 1440px;
 }
+@media (max-width: 1439px) {
+  .shop {
+    min-width: 768px;
+  }
+}
 .shop__wrapper {
   padding: 20px 20px 40px 20px;
 }
 .shop__subtitle {
   margin-top: 40px;
-  letter-spacing: 2px;
+  letter-spacing: 1.97px;
 }
 .shop__menus {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1439px) {
+  .shop__menus {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+}
 
+@media (max-width: 1439px) {
+  .menu {
+    align-self: flex-start;
+  }
+}
+@media (max-width: 1439px) {
+  .menu:nth-child(2) {
+    align-self: flex-end;
+  }
+}
 .menu__title {
   margin-bottom: 40px;
 }
