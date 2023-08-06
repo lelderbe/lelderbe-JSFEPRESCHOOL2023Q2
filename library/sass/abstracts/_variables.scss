@@ -1,4 +1,10 @@
 $desktop-content-width: 1440px;
+$pad-content-width: 768px;
+$mobile-content-width: 375px;
+
+$adaptive-pad-limit: calc($desktop-content-width - 1px);
+$adaptive-mobile-limit: calc($mobile-content-width - 1px);
+
 
 $c-light: #ffffff;
 $c-dark: #000000;

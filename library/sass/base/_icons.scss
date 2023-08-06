@@ -16,6 +16,17 @@
     background-image: url('../assets/img/icons/icon-profile.svg');
 }
 
+.icon_burger {
+    display: none;
+    width: 45px;
+    height: 22px;
+    background-image: url('../assets/img/icons/icon-burger.svg');
+
+    @media (max-width: $adaptive-pad-limit) {
+        display: block;
+	}
+}
+
 .icon_twitter {
     background-image: url('../assets/img/icons/icon-twitter.svg');
 }

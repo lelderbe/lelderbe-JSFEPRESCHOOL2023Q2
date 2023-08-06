@@ -97,6 +97,18 @@ h1 {
   background-image: url("../assets/img/icons/icon-profile.svg");
 }
 
+.icon_burger {
+  display: none;
+  width: 45px;
+  height: 22px;
+  background-image: url("../assets/img/icons/icon-burger.svg");
+}
+@media (max-width: 1439px) {
+  .icon_burger {
+    display: block;
+  }
+}
+
 .icon_twitter {
   background-image: url("../assets/img/icons/icon-twitter.svg");
 }
@@ -142,10 +154,20 @@ h1 {
   width: 1440px;
   margin: 0 auto;
 }
+@media (max-width: 1439px) {
+  .wrapper {
+    width: 768px;
+  }
+}
 
 .header {
   min-width: 1440px;
   color: #ffffff;
+}
+@media (max-width: 1439px) {
+  .header {
+    min-width: 768px;
+  }
 }
 .header__wrapper {
   display: flex;
@@ -176,6 +198,11 @@ h1 {
   max-width: 130px;
   max-height: 50px;
   overflow: hidden;
+}
+@media (max-width: 1439px) {
+  .navigation {
+    display: none;
+  }
 }
 
 .footer {
