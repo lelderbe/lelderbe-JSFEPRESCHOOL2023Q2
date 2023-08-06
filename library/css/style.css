@@ -254,10 +254,20 @@ h1 {
   min-width: 1440px;
   color: #ffffff;
 }
+@media (max-width: 1439px) {
+  .welcome {
+    min-width: 768px;
+  }
+}
 .welcome__wrapper {
-  padding: 220px 840px 160px 0;
+  padding: 220px 169px 160px 0;
   background-image: url("../assets/img/welcome/welcome-background.jpg");
   background-size: cover;
+}
+@media (max-width: 1439px) {
+  .welcome__wrapper {
+    background-image: url("../assets/img/welcome/welcome-background-pad.jpg");
+  }
 }
 .welcome h2 {
   max-height: 220px;

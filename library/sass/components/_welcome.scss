@@ -2,10 +2,18 @@
     min-width: $desktop-content-width;
     color: $c-light;
 
+    @media (max-width: $adaptive-pad-limit) {
+        min-width: $pad-content-width;
+	}
+
     &__wrapper {
-        padding: 220px 840px 160px 0;
+        padding: 220px 169px 160px 0;
         background-image: url('../assets/img/welcome/welcome-background.jpg');
         background-size: cover;
+
+        @media (max-width: $adaptive-pad-limit) {
+            background-image: url('../assets/img/welcome/welcome-background-pad.jpg');
+        }
     }
 
     h2 {
