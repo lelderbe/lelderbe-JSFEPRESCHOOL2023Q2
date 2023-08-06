@@ -347,12 +347,13 @@ h1 {
   }
 }
 .welcome__wrapper {
-  padding: 220px 169px 160px 0;
+  padding: 220px 840px 160px 0;
   background-image: url("../assets/img/welcome/welcome-background.jpg");
   background-size: cover;
 }
 @media (max-width: 1439px) {
   .welcome__wrapper {
+    padding-right: 169px;
     background-image: url("../assets/img/welcome/welcome-background-pad.jpg");
   }
 }
@@ -402,6 +403,7 @@ h1 {
   width: 24px;
   height: 24px;
   background-image: url("../assets/img/icons/icon-carret-prev.svg");
+  cursor: pointer;
 }
 @media (max-width: 1439px) {
   .about__images::before {
@@ -417,6 +419,7 @@ h1 {
   width: 24px;
   height: 24px;
   background-image: url("../assets/img/icons/icon-carret-next.svg");
+  cursor: pointer;
 }
 @media (max-width: 1439px) {
   .about__images::after {

@@ -33,6 +33,7 @@
             width: 24px;
             height: 24px;
             background-image: url('../assets/img/icons/icon-carret-prev.svg');
+            cursor: pointer;
 
             @media (max-width: $adaptive-pad-limit) {
                 display: block;
@@ -48,6 +49,7 @@
             width: 24px;
             height: 24px;
             background-image: url('../assets/img/icons/icon-carret-next.svg');
+            cursor: pointer;
 
             @media (max-width: $adaptive-pad-limit) {
                 display: block;
