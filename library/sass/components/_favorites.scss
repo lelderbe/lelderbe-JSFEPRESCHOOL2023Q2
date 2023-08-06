@@ -1,6 +1,10 @@
 .favorites {
     min-width: $desktop-content-width;
 
+    @media (max-width: $adaptive-pad-limit) {
+        min-width: $pad-content-width;
+    }
+
     &__wrapper {
         padding: 20px 20px 40px;
     }
@@ -20,6 +24,11 @@
         margin-top: 40px;
         grid-template-columns: 1fr 1fr;
         gap: 40px 220px;
+
+        @media (max-width: $adaptive-pad-limit) {
+            margin: 40px 69px 0;
+            grid-template-columns: 1fr;
+        }
     }
 }
 
@@ -81,7 +90,9 @@
 
 .book {
     position: relative;
+    min-height: 555px;
     max-height: 555px;
+    min-width: 590px;
     padding-right: 40px;
 
     &__frame {
@@ -126,7 +137,6 @@
         letter-spacing: 2px;
         text-transform: capitalize;
         overflow: hidden;
-
     }
 
     &__text {

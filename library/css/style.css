@@ -437,6 +437,11 @@ h1 {
 .favorites {
   min-width: 1440px;
 }
+@media (max-width: 1439px) {
+  .favorites {
+    min-width: 768px;
+  }
+}
 .favorites__wrapper {
   padding: 20px 20px 40px;
 }
@@ -453,6 +458,12 @@ h1 {
   margin-top: 40px;
   grid-template-columns: 1fr 1fr;
   gap: 40px 220px;
+}
+@media (max-width: 1439px) {
+  .favorites__books {
+    margin: 40px 69px 0;
+    grid-template-columns: 1fr;
+  }
 }
 
 .seasons {
@@ -504,7 +515,9 @@ h1 {
 
 .book {
   position: relative;
+  min-height: 555px;
   max-height: 555px;
+  min-width: 590px;
   padding-right: 40px;
 }
 .book__frame {
