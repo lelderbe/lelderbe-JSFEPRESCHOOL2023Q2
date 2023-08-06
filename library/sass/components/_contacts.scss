@@ -1,6 +1,10 @@
 .contacts {
     min-width: $desktop-content-width;
 
+    @media (max-width: $adaptive-pad-limit) {
+        min-width: $pad-content-width;
+    }
+
     &__wrapper {
         padding: 20px 20px 40px 20px;
     }
@@ -11,14 +15,19 @@
 
     &__info {
         display: flex;
-        max-height: 414px;
         margin-top: 40px;
         justify-content: space-between;
         overflow: hidden;
+
+        @media (max-width: $adaptive-pad-limit) {
+            flex-direction: column;
+            gap: 100px;
+        }
     }
 }
 
 .contacts-info {
+    max-height: 414px;
     font: normal 400 20px / 40px $ff-primary;
     letter-spacing: 2px;
     text-transform: capitalize;
@@ -36,7 +45,7 @@
 
     &__text {
         max-height: 40px;
-        margin: 20px 0;
+        margin-top: 20px;
         overflow: hidden;
 
         > strong {
@@ -53,5 +62,9 @@
 
     &__map {
         width: 696px;
+
+        @media (max-width: $adaptive-pad-limit) {
+            margin: 0 auto;
+        }
     }
 }

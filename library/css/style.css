@@ -653,6 +653,11 @@ h1 {
 .contacts {
   min-width: 1440px;
 }
+@media (max-width: 1439px) {
+  .contacts {
+    min-width: 768px;
+  }
+}
 .contacts__wrapper {
   padding: 20px 20px 40px 20px;
 }
@@ -661,13 +666,19 @@ h1 {
 }
 .contacts__info {
   display: flex;
-  max-height: 414px;
   margin-top: 40px;
   justify-content: space-between;
   overflow: hidden;
 }
+@media (max-width: 1439px) {
+  .contacts__info {
+    flex-direction: column;
+    gap: 100px;
+  }
+}
 
 .contacts-info {
+  max-height: 414px;
   font: normal 400 20px/40px "Inter", sans-serif;
   letter-spacing: 2px;
   text-transform: capitalize;
@@ -683,7 +694,7 @@ h1 {
 }
 .contacts-info__text {
   max-height: 40px;
-  margin: 20px 0;
+  margin-top: 20px;
   overflow: hidden;
 }
 .contacts-info__text > strong {
@@ -697,6 +708,11 @@ h1 {
 }
 .contacts-info__map {
   width: 696px;
+}
+@media (max-width: 1439px) {
+  .contacts-info__map {
+    margin: 0 auto;
+  }
 }
 
 .libcard {
