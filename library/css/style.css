@@ -276,9 +276,19 @@ h1 {
   min-width: 1440px;
   color: #ffffff;
 }
+@media (max-width: 1439px) {
+  .footer {
+    min-width: 768px;
+  }
+}
 .footer__wrapper {
   padding: 20px 20px 44px;
   background-color: #0c0c0e;
+}
+@media (max-width: 1439px) {
+  .footer__wrapper {
+    padding: 20px 19px 44px;
+  }
 }
 .footer__row {
   display: flex;
@@ -310,8 +320,18 @@ h1 {
   letter-spacing: 2px;
   white-space: nowrap;
 }
+@media (max-width: 1439px) {
+  .footer__credentials {
+    gap: 130px;
+  }
+}
 .footer__credentials > p {
   flex: 0 0 300px;
+}
+@media (max-width: 1439px) {
+  .footer__credentials > p {
+    flex: auto;
+  }
 }
 .footer__credentials > p:nth-child(3) {
   text-align: right;
