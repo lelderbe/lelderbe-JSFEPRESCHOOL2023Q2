@@ -4,7 +4,7 @@
 
     @media (max-width: $adaptive-pad-limit) {
         min-width: $pad-content-width;
-	}
+    }
 
     &__wrapper {
         display: flex;
@@ -20,6 +20,7 @@
     }
 
     &__menu {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 40px;
@@ -27,6 +28,8 @@
 }
 
 .navigation {
+    @extend %transition;
+
     > ul {
         display: flex;
         gap: 30px;
@@ -35,6 +38,11 @@
         letter-spacing: 0.08px;
         white-space: nowrap;
 
+        @media (max-width: $adaptive-pad-limit) {
+            flex-direction: column;
+            align-items: center;
+        }
+
         > li {
             max-width: 130px;
             max-height: 50px;
@@ -42,8 +50,17 @@
         }
     }
 
-
     @media (max-width: $adaptive-pad-limit) {
-        display: none;
-	}
+        position: absolute;
+        top: -3000px;
+        right: -20px;
+        padding: 10px 107px 100px;
+        background-color: $c-light-dark;
+    }
+
+    &_show {
+        @media (max-width: $adaptive-pad-limit) {
+            top: 70px;
+        }
+    }
 }

@@ -24,7 +24,15 @@
 
     @media (max-width: $adaptive-pad-limit) {
         display: block;
-	}
+    }
+
+    &-close {
+        width: 45px;
+        height: 32px;
+        background-image: url('../assets/img/icons/icon-burger-pad.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
 
 .icon_twitter {
