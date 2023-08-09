@@ -1,15 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
     const burgerMenuBtn = document.querySelector('#menu-button');
-    const menu = document.querySelector('#menu');
+    const menuPanel = document.querySelector('#menu');
 
-    if (!burgerMenuBtn || !menu) {
+    if (!burgerMenuBtn || !menuPanel) {
         return;
     }
 
     burgerMenuBtn.addEventListener('click', (e) => {
-        e.target.classList.toggle('icon_burger-close');
-        menu.classList.toggle('navigation_show');
+        e.stopPropagation();
+        burgerMenuBtn.classList.toggle('icon_burger-close');
+        menuPanel.classList.toggle('navigation_show');
     });
+
+    menuPanel.addEventListener('click', (e) => {
+        if (e.target.localName !== 'a') {
+            e.stopPropagation();
+        }
+    });
+
+    document.body.addEventListener('click', () => {
+        burgerMenuBtn.classList.remove('icon_burger-close');
+        menuPanel.classList.remove('navigation_show');
+    })
 });
 
 console.log(`
