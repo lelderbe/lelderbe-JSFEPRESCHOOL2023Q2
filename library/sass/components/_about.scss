@@ -5,6 +5,10 @@
         min-width: $pad-content-width;
     }
 
+    @media (max-width: $adaptive-mobile-limit) {
+        min-width: $mobile-content-width;
+    }
+
     &__wrapper {
         padding: 20px 20px 35px;
     }
@@ -20,19 +24,19 @@
         overflow: hidden;
 
         @media (max-width: $adaptive-pad-limit) {
-            padding: 0 139px;
+            padding: 0 calc((100% - 450px) / 2);
             gap: 139px;
         }
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
-            left: 57px;
+            left: calc((100% - 450px) / 2 / 2.44);
             top: 288.5px;
             display: none;
             width: 24px;
             height: 24px;
-            background-image: url('../assets/img/icons/icon-carret-prev.svg');
+            background-image: url("../assets/img/icons/icon-carret-prev.svg");
             cursor: pointer;
 
             @media (max-width: $adaptive-pad-limit) {
@@ -41,14 +45,14 @@
         }
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
-            right: 57px;
+            right: calc((100% - 450px) / 2 / 2.44);
             top: 288.5px;
             display: none;
             width: 24px;
             height: 24px;
-            background-image: url('../assets/img/icons/icon-carret-next.svg');
+            background-image: url("../assets/img/icons/icon-carret-next.svg");
             cursor: pointer;
 
             @media (max-width: $adaptive-pad-limit) {

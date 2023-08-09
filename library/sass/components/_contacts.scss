@@ -5,6 +5,10 @@
         min-width: $pad-content-width;
     }
 
+    @media (max-width: $adaptive-mobile-limit) {
+        min-width: $mobile-content-width;
+    }
+
     &__wrapper {
         padding: 20px 20px 40px 20px;
     }
@@ -65,6 +69,10 @@
 
         @media (max-width: $adaptive-pad-limit) {
             margin: 0 auto;
+        }
+
+        @media (max-width: $adaptive-mobile-limit) {
+            width: 100%;
         }
     }
 }

@@ -6,6 +6,10 @@
         min-width: $pad-content-width;
     }
 
+    @media (max-width: $adaptive-mobile-limit) {
+        min-width: $mobile-content-width;
+    }
+
     &__wrapper {
         display: flex;
         padding: 20px;
@@ -30,7 +34,7 @@
 .navigation {
     @extend %transition;
 
-    > ul {
+    >ul {
         display: flex;
         gap: 30px;
         list-style: none;
@@ -43,7 +47,7 @@
             align-items: center;
         }
 
-        > li {
+        >li {
             max-width: 130px;
             max-height: 50px;
             overflow: hidden;

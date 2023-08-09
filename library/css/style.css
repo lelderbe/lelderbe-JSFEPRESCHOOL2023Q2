@@ -6,7 +6,7 @@
     display: initial;
   }
 }
-@media all and (max-width: 374px) {
+@media all and (max-width: 767px) {
   .only-pad {
     display: none;
   }
@@ -21,7 +21,7 @@
 .only-mobile {
   display: none;
 }
-@media all and (max-width: 374px) {
+@media all and (max-width: 767px) {
   .only-mobile {
     display: initial;
   }
@@ -30,7 +30,7 @@
 .only-mobile-block {
   display: none;
 }
-@media all and (max-width: 374px) {
+@media all and (max-width: 767px) {
   .only-mobile-block {
     display: block;
   }
@@ -45,7 +45,7 @@
   }
 }
 
-@media all and (max-width: 374px) {
+@media all and (max-width: 767px) {
   .non-mobile {
     display: none;
   }
@@ -233,6 +233,11 @@ h1 {
     width: 768px;
   }
 }
+@media (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+  }
+}
 
 .header {
   min-width: 1440px;
@@ -241,6 +246,11 @@ h1 {
 @media (max-width: 1439px) {
   .header {
     min-width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    min-width: 100%;
   }
 }
 .header__wrapper {
@@ -304,6 +314,11 @@ h1 {
     min-width: 768px;
   }
 }
+@media (max-width: 767px) {
+  .footer {
+    min-width: 100%;
+  }
+}
 .footer__wrapper {
   padding: 20px 20px 44px;
   background-color: #0c0c0e;
@@ -343,17 +358,12 @@ h1 {
   letter-spacing: 2px;
   white-space: nowrap;
 }
-@media (max-width: 1439px) {
-  .footer__credentials {
-    gap: 130px;
-  }
-}
 .footer__credentials > p {
   flex: 0 0 300px;
 }
 @media (max-width: 1439px) {
   .footer__credentials > p {
-    flex: auto;
+    flex: unset;
   }
 }
 .footer__credentials > p:nth-child(3) {
@@ -369,18 +379,24 @@ h1 {
     min-width: 768px;
   }
 }
+@media (max-width: 767px) {
+  .welcome {
+    min-width: 100%;
+  }
+}
 .welcome__wrapper {
-  padding: 220px 840px 160px 0;
+  padding: 220px 0 160px 0;
   background-image: url("../assets/img/welcome/welcome-background.jpg");
   background-size: cover;
 }
 @media (max-width: 1439px) {
   .welcome__wrapper {
-    padding-right: 169px;
     background-image: url("../assets/img/welcome/welcome-background-pad.jpg");
   }
 }
 .welcome h2 {
+  min-width: 600px;
+  max-width: 600px;
   max-height: 220px;
   padding: 35px 40px;
   text-align: center;
@@ -399,6 +415,11 @@ h1 {
     min-width: 768px;
   }
 }
+@media (max-width: 767px) {
+  .about {
+    min-width: 100%;
+  }
+}
 .about__wrapper {
   padding: 20px 20px 35px;
 }
@@ -413,14 +434,14 @@ h1 {
 }
 @media (max-width: 1439px) {
   .about__images {
-    padding: 0 139px;
+    padding: 0 calc((100% - 450px) / 2);
     gap: 139px;
   }
 }
 .about__images::before {
   content: "";
   position: absolute;
-  left: 57px;
+  left: calc((100% - 450px) / 2 / 2.44);
   top: 288.5px;
   display: none;
   width: 24px;
@@ -436,7 +457,7 @@ h1 {
 .about__images::after {
   content: "";
   position: absolute;
-  right: 57px;
+  right: calc((100% - 450px) / 2 / 2.44);
   top: 288.5px;
   display: none;
   width: 24px;
@@ -488,6 +509,11 @@ h1 {
     min-width: 768px;
   }
 }
+@media (max-width: 767px) {
+  .favorites {
+    min-width: 100%;
+  }
+}
 .favorites__wrapper {
   padding: 20px 20px 40px;
 }
@@ -500,15 +526,15 @@ h1 {
   margin-top: 40px;
 }
 .favorites__books {
-  display: grid;
+  display: flex;
   margin-top: 40px;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 220px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 40px;
 }
 @media (max-width: 1439px) {
   .favorites__books {
-    margin: 40px 69px 0;
-    grid-template-columns: 1fr;
+    justify-content: center;
   }
 }
 
@@ -516,6 +542,11 @@ h1 {
   display: flex;
   align-items: center;
   list-style: none;
+}
+@media (max-width: 767px) {
+  .seasons {
+    justify-content: space-between;
+  }
 }
 .seasons > li {
   display: flex;
@@ -549,14 +580,34 @@ h1 {
 .seasons__winter {
   flex: 0 0 194px;
 }
+@media (max-width: 767px) {
+  .seasons__winter {
+    flex: unset;
+  }
+}
 .seasons__spring {
   flex: 0 0 189px;
+}
+@media (max-width: 767px) {
+  .seasons__spring {
+    flex: unset;
+  }
 }
 .seasons__summer {
   flex: 0 0 206px;
 }
+@media (max-width: 767px) {
+  .seasons__summer {
+    flex: unset;
+  }
+}
 .seasons__autumn {
   flex: 0 0 111px;
+}
+@media (max-width: 767px) {
+  .seasons__autumn {
+    flex: unset;
+  }
 }
 
 .book {
@@ -564,6 +615,7 @@ h1 {
   min-height: 555px;
   max-height: 555px;
   min-width: 590px;
+  max-width: 590px;
   padding-right: 40px;
 }
 .book__frame {
@@ -631,6 +683,11 @@ h1 {
 @media (max-width: 1439px) {
   .shop {
     min-width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .shop {
+    min-width: 100%;
   }
 }
 .shop__wrapper {
@@ -704,6 +761,11 @@ h1 {
     min-width: 768px;
   }
 }
+@media (max-width: 767px) {
+  .contacts {
+    min-width: 100%;
+  }
+}
 .contacts__wrapper {
   padding: 20px 20px 40px 20px;
 }
@@ -760,6 +822,11 @@ h1 {
     margin: 0 auto;
   }
 }
+@media (max-width: 767px) {
+  .contacts-info__map {
+    width: 100%;
+  }
+}
 
 .libcard {
   min-width: 1440px;
@@ -767,6 +834,11 @@ h1 {
 @media (max-width: 1439px) {
   .libcard {
     min-width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .libcard {
+    min-width: 100%;
   }
 }
 .libcard__wrapper {

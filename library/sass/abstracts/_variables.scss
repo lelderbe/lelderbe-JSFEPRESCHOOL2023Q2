@@ -1,9 +1,11 @@
 $desktop-content-width: 1440px;
 $pad-content-width: 768px;
-$mobile-content-width: 375px;
+// $mobile-content-width: 375px;
+// $mobile-content-width: 640px;
+$mobile-content-width: 100%;
 
 $adaptive-pad-limit: calc($desktop-content-width - 1px);
-$adaptive-mobile-limit: calc($mobile-content-width - 1px);
+$adaptive-mobile-limit: calc($pad-content-width - 1px);
 
 
 $c-light: #ffffff;
