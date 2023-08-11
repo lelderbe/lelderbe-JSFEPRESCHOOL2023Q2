@@ -2,7 +2,11 @@
     min-width: $desktop-content-width;
     color: $c-light;
 
-    @media (max-width: $adaptive-pad-limit) {
+    // @media (max-width: $adaptive-pad-limit) {
+    //     min-width: $pad-content-width;
+    // }
+
+    @include media-tablet {
         min-width: $pad-content-width;
     }
 
