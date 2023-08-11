@@ -34,7 +34,19 @@
 .navigation {
     @extend %transition;
 
-    >ul {
+    @media (max-width: $adaptive-pad-limit) {
+        position: absolute;
+        top: -1000px;
+        right: -20px;
+        min-width: 332px;
+        max-width: 332px;
+        min-height: 480px;
+        max-height: 480px;
+        padding: 10px 0 100px;
+        background-color: $c-light-dark;
+    }
+
+    > ul {
         display: flex;
         gap: 30px;
         list-style: none;
@@ -47,19 +59,11 @@
             align-items: center;
         }
 
-        >li {
+        > li {
             max-width: 130px;
             max-height: 50px;
             overflow: hidden;
         }
-    }
-
-    @media (max-width: $adaptive-pad-limit) {
-        position: absolute;
-        top: -1000px;
-        right: -20px;
-        padding: 10px 107px 100px;
-        background-color: $c-light-dark;
     }
 
     &_show {
