@@ -271,6 +271,19 @@ h1 {
   gap: 40px;
 }
 
+@media (max-width: 1439px) {
+  .navigation {
+    position: absolute;
+    top: -1000px;
+    right: -20px;
+    min-width: 332px;
+    max-width: 332px;
+    min-height: 480px;
+    max-height: 480px;
+    padding: 10px 0 100px;
+    background-color: #0c0c0e;
+  }
+}
 .navigation > ul {
   display: flex;
   gap: 30px;
@@ -289,15 +302,6 @@ h1 {
   max-width: 130px;
   max-height: 50px;
   overflow: hidden;
-}
-@media (max-width: 1439px) {
-  .navigation {
-    position: absolute;
-    top: -1000px;
-    right: -20px;
-    padding: 10px 107px 100px;
-    background-color: #0c0c0e;
-  }
 }
 @media (max-width: 1439px) {
   .navigation_show {
