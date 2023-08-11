@@ -1,4 +1,12 @@
 .wrapper {
     width: $desktop-content-width;
     margin: 0 auto;
+
+    @media (max-width: $adaptive-pad-limit) {
+        width: $pad-content-width;
+    }
+
+    @media (max-width: $adaptive-mobile-limit) {
+        width: $mobile-content-width;
+    }
 }

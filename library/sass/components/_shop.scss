@@ -1,22 +1,45 @@
 .shop {
     min-width: $desktop-content-width;
 
+    @media (max-width: $adaptive-pad-limit) {
+        min-width: $pad-content-width;
+    }
+
+    @media (max-width: $adaptive-mobile-limit) {
+        min-width: $mobile-content-width;
+    }
+
     &__wrapper {
         padding: 20px 20px 40px 20px;
     }
 
     &__subtitle {
         margin-top: 40px;
-        letter-spacing: 2px;
+        letter-spacing: 1.97px;
     }
 
     &__menus {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: $adaptive-pad-limit) {
+            flex-direction: column;
+            row-gap: 40px;
+        }
     }
 }
 
 .menu {
+    @media (max-width: $adaptive-pad-limit) {
+        align-self: flex-start;
+    }
+
+    &:nth-child(2) {
+        @media (max-width: $adaptive-pad-limit) {
+            align-self: flex-end;
+        }
+    }
+
     &__title {
         margin-bottom: 40px;
     }

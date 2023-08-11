@@ -2,13 +2,27 @@
     min-width: $desktop-content-width;
     color: $c-light;
 
+    @media (max-width: $adaptive-pad-limit) {
+        min-width: $pad-content-width;
+    }
+
+    @media (max-width: $adaptive-mobile-limit) {
+        min-width: $mobile-content-width;
+    }
+
     &__wrapper {
-        padding: 220px 840px 160px 0;
-        background-image: url('../assets/img/welcome/welcome-background.jpg');
+        padding: 220px 0 160px 0;
+        background-image: url("../assets/img/welcome/welcome-background.jpg");
         background-size: cover;
+
+        @media (max-width: $adaptive-pad-limit) {
+            background-image: url("../assets/img/welcome/welcome-background-pad.jpg");
+        }
     }
 
     h2 {
+        min-width: 600px;
+        max-width: 600px;
         max-height: 220px;
         padding: 35px 40px;
         text-align: center;

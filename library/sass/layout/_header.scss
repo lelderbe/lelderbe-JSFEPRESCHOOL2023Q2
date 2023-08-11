@@ -2,6 +2,14 @@
     min-width: $desktop-content-width;
     color: $c-light;
 
+    @media (max-width: $adaptive-pad-limit) {
+        min-width: $pad-content-width;
+    }
+
+    @media (max-width: $adaptive-mobile-limit) {
+        min-width: $mobile-content-width;
+    }
+
     &__wrapper {
         display: flex;
         padding: 20px;
@@ -16,6 +24,7 @@
     }
 
     &__menu {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 40px;
@@ -23,7 +32,9 @@
 }
 
 .navigation {
-    > ul {
+    @extend %transition;
+
+    >ul {
         display: flex;
         gap: 30px;
         list-style: none;
@@ -31,10 +42,29 @@
         letter-spacing: 0.08px;
         white-space: nowrap;
 
-        > li {
+        @media (max-width: $adaptive-pad-limit) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        >li {
             max-width: 130px;
             max-height: 50px;
             overflow: hidden;
+        }
+    }
+
+    @media (max-width: $adaptive-pad-limit) {
+        position: absolute;
+        top: -1000px;
+        right: -20px;
+        padding: 10px 107px 100px;
+        background-color: $c-light-dark;
+    }
+
+    &_show {
+        @media (max-width: $adaptive-pad-limit) {
+            top: 70px;
         }
     }
 }

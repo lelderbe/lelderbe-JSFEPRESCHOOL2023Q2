@@ -1,6 +1,14 @@
 .favorites {
     min-width: $desktop-content-width;
 
+    @media (max-width: $adaptive-pad-limit) {
+        min-width: $pad-content-width;
+    }
+
+    @media (max-width: $adaptive-mobile-limit) {
+        min-width: $mobile-content-width;
+    }
+
     &__wrapper {
         padding: 20px 20px 40px;
     }
@@ -16,10 +24,15 @@
     }
 
     &__books {
-        display: grid;
+        display: flex;
         margin-top: 40px;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px 220px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 40px;
+
+        @media (max-width: $adaptive-pad-limit) {
+            justify-content: center;
+        }
     }
 }
 
@@ -27,6 +40,10 @@
     display: flex;
     align-items: center;
     list-style: none;
+
+    @media (max-width: $adaptive-mobile-limit) {
+        justify-content: space-between;
+    }
 
     > li {
         display: flex;
@@ -64,24 +81,43 @@
 
     &__winter {
         flex: 0 0 194px;
+
+        @media (max-width: $adaptive-mobile-limit) {
+            flex: unset;
+        }
     }
 
     &__spring {
         flex: 0 0 189px;
+
+        @media (max-width: $adaptive-mobile-limit) {
+            flex: unset;
+        }
     }
 
     &__summer {
         flex: 0 0 206px;
+
+        @media (max-width: $adaptive-mobile-limit) {
+            flex: unset;
+        }
     }
 
     &__autumn {
         flex: 0 0 111px;
+
+        @media (max-width: $adaptive-mobile-limit) {
+            flex: unset;
+        }
     }
 }
 
 .book {
     position: relative;
+    min-height: 555px;
     max-height: 555px;
+    min-width: 590px;
+    max-width: 590px;
     padding-right: 40px;
 
     &__frame {
@@ -100,7 +136,7 @@
         text-transform: capitalize;
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
@@ -126,7 +162,6 @@
         letter-spacing: 2px;
         text-transform: capitalize;
         overflow: hidden;
-
     }
 
     &__text {

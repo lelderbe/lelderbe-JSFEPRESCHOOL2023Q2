@@ -1,0 +1,52 @@
+.only-pad {
+    display: none;
+
+    @media all and (max-width: $adaptive-pad-limit) {
+        display: initial;
+    }
+    @media all and (max-width: $adaptive-mobile-limit) {
+        display: none;
+    }
+}
+
+.only-desk {
+    @media all and (max-width: $adaptive-pad-limit) {
+        display: none !important;
+    }
+}
+
+.only-mobile {
+    display: none;
+
+    @media all and (max-width: $adaptive-mobile-limit) {
+        display: initial;
+    }
+}
+
+.only-mobile-block {
+    display: none;
+
+    @media all and (max-width: $adaptive-mobile-limit) {
+        display: block;
+    }
+}
+
+.non-desk {
+    display: none;
+
+    @media all and (max-width: $adaptive-pad-limit) {
+        display: initial;
+    }
+}
+
+.non-mobile {
+    @media all and (max-width: $adaptive-mobile-limit) {
+        display: none;
+    }
+}
+
+.non-pad {
+    @media all and (min-width: $pad-content-width) and (max-width: $adaptive-pad-limit) {
+        display: none;
+    }
+}
