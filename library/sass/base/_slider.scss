@@ -1,0 +1,35 @@
+.slider {
+    overflow: hidden;
+
+    &__body {
+        display: flex;
+    }
+
+    &__frame {
+        flex: 1;
+
+        @media (max-width: $adaptive-pad-limit) {
+            max-width: 450px;
+            overflow: hidden;
+        }
+    }
+
+    &__prev,
+    &__next {
+        display: none;
+        @extend %transition;
+
+        @media (max-width: $adaptive-pad-limit) {
+            display: flex;
+            padding-top: 39px;
+            justify-content: center;
+            align-items: center;
+            min-width: calc((100% - 450px) / 2);
+        }
+
+        &.inactive {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}

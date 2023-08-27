@@ -21,44 +21,7 @@
         position: relative;
         display: flex;
         gap: 25px;
-        overflow: hidden;
-
-        @media (max-width: $adaptive-pad-limit) {
-            padding: 0 calc((100% - 450px) / 2);
-            gap: 139px;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            left: calc((100% - 450px) / 2 / 2.44);
-            top: 288.5px;
-            display: none;
-            width: 24px;
-            height: 24px;
-            background-image: url("../assets/img/icons/icon-carret-prev.svg");
-            cursor: pointer;
-
-            @media (max-width: $adaptive-pad-limit) {
-                display: block;
-            }
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            right: calc((100% - 450px) / 2 / 2.44);
-            top: 288.5px;
-            display: none;
-            width: 24px;
-            height: 24px;
-            background-image: url("../assets/img/icons/icon-carret-next.svg");
-            cursor: pointer;
-
-            @media (max-width: $adaptive-pad-limit) {
-                display: block;
-            }
-        }
+        @extend %transition;
 
         > img {
             width: 450px;
@@ -84,6 +47,7 @@
     background: content-box $c-light-dark;
     border-radius: 50%;
     cursor: pointer;
+    @extend %transition;
 
     &:not(&_active):hover {
         opacity: 0.7;

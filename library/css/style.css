@@ -58,7 +58,7 @@
 }
 
 a,
-a:visited, .navigation, .button, .icon {
+a:visited, .dot, .about__images, .navigation, .slider__prev, .slider__next, .button, .icon {
   transition: all 0.3s ease-out;
 }
 
@@ -187,12 +187,12 @@ h1 {
   background-image: url("../assets/img/icons/icon-facebook.svg");
 }
 
-.icon_carret-left {
-  background-image: url("../assets/img/icons/icon-carret-left.svg");
+.icon_carret-prev {
+  background-image: url("../assets/img/icons/icon-carret-prev.svg");
 }
 
-.icon_carret-right {
-  background-image: url("../assets/img/icons/icon-carret-right.svg");
+.icon_carret-next {
+  background-image: url("../assets/img/icons/icon-carret-next.svg");
 }
 
 .button {
@@ -222,6 +222,38 @@ h1 {
   padding: 9px 40px;
   font-size: 20px;
   line-height: 24px;
+}
+
+.slider {
+  overflow: hidden;
+}
+.slider__body {
+  display: flex;
+}
+.slider__frame {
+  flex: 1;
+}
+@media (max-width: 1439px) {
+  .slider__frame {
+    max-width: 450px;
+    overflow: hidden;
+  }
+}
+.slider__prev, .slider__next {
+  display: none;
+}
+@media (max-width: 1439px) {
+  .slider__prev, .slider__next {
+    display: flex;
+    padding-top: 39px;
+    justify-content: center;
+    align-items: center;
+    min-width: calc((100% - 450px) / 2);
+  }
+}
+.slider__prev.inactive, .slider__next.inactive {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .wrapper {
@@ -434,45 +466,6 @@ h1 {
   position: relative;
   display: flex;
   gap: 25px;
-  overflow: hidden;
-}
-@media (max-width: 1439px) {
-  .about__images {
-    padding: 0 calc((100% - 450px) / 2);
-    gap: 139px;
-  }
-}
-.about__images::before {
-  content: "";
-  position: absolute;
-  left: calc((100% - 450px) / 2 / 2.44);
-  top: 288.5px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  background-image: url("../assets/img/icons/icon-carret-prev.svg");
-  cursor: pointer;
-}
-@media (max-width: 1439px) {
-  .about__images::before {
-    display: block;
-  }
-}
-.about__images::after {
-  content: "";
-  position: absolute;
-  right: calc((100% - 450px) / 2 / 2.44);
-  top: 288.5px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  background-image: url("../assets/img/icons/icon-carret-next.svg");
-  cursor: pointer;
-}
-@media (max-width: 1439px) {
-  .about__images::after {
-    display: block;
-  }
 }
 .about__images > img {
   width: 450px;
