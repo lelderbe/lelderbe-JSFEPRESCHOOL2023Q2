@@ -24,14 +24,11 @@
     }
 
     &__books {
-        display: flex;
-        margin-top: 40px;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        row-gap: 40px;
+        position: relative;
+        min-height: 1190px;
 
         @media (max-width: $adaptive-pad-limit) {
-            justify-content: center;
+            min-height: 2380px;
         }
     }
 }
@@ -112,6 +109,30 @@
     }
 }
 
+.books {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    opacity: 0;
+    @extend %transition;
+
+    @media (max-width: $adaptive-pad-limit) {
+        justify-content: center;
+    }
+
+    &.active {
+        z-index: 10;
+        opacity: 1;
+    }
+}
+
 .book {
     position: relative;
     min-height: 555px;
@@ -136,7 +157,7 @@
         text-transform: capitalize;
 
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             bottom: 0;
             left: 0;

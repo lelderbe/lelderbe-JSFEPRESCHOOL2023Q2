@@ -58,7 +58,7 @@
 }
 
 a,
-a:visited, .dot, .about__images, .navigation, .slider__prev, .slider__next, .button, .icon {
+a:visited, .books, .dot, .about__images, .navigation, .slider__prev, .slider__next, .button, .icon {
   transition: all 0.3s ease-out;
 }
 
@@ -523,15 +523,12 @@ h1 {
   margin-top: 40px;
 }
 .favorites__books {
-  display: flex;
-  margin-top: 40px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  row-gap: 40px;
+  position: relative;
+  min-height: 1190px;
 }
 @media (max-width: 1439px) {
   .favorites__books {
-    justify-content: center;
+    min-height: 2380px;
   }
 }
 
@@ -605,6 +602,29 @@ h1 {
   .seasons__autumn {
     flex: unset;
   }
+}
+
+.books {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  opacity: 0;
+}
+@media (max-width: 1439px) {
+  .books {
+    justify-content: center;
+  }
+}
+.books.active {
+  z-index: 10;
+  opacity: 1;
 }
 
 .book {
