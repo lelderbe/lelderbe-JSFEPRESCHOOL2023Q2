@@ -1,37 +1,94 @@
 body {
     height: 100vh;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .bg {
-    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     height: 100%;
-    justify-content: center;
-    align-items: center;
+    /* background-color: #000; */
+    background-size: cover;
+    overflow: hidden;
+    filter: blur(10px);
 }
 
-.wrapper {
-    /* margin: 0 auto; */
+.player__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .player {
-    width: 400px;
-    height: 500px;
+    width: 350px;
+    /* height: 500px; */
+    background-color: #fff;
     border: 1px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.player__cover {
+.track__cover {
+    min-height: 350px;
+    max-height: 350px;
+    background-size: cover;
+}
+
+.track__controls {
+    padding: 10px 20px 20px;
+}
+
+.track__artist {
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.track__title {
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .player__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.track__seek {
-    height: 40px;
-    border: 1px solid #000;
+.track__timings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.track__progress {
+    height: 20px;
+    width: 130px;
+    cursor: pointer;
+    border: 5px solid #000;
+}
+
+.track__bar {
+    height: 100%;
+    background-color: aquamarine;
 }
 
 .button {
-    display: block;
+    display: inline-block;
     height: 40px;
     width: 40px;
     background-size: cover;

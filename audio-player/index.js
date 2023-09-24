@@ -1,8 +1,15 @@
 const tracks = [
-    { id: 1, title: 'lemonade', audio: 'assets/audio/beyonce.mp3', cover: 'assets/covers/lemonade.png' },
+    {
+        id: 1,
+        artist: 'Beyonce',
+        title: 'lemonade lemonade lemonade lemonade lemonade lemonade lemonade lemonade',
+        audio: 'assets/audio/beyonce.mp3',
+        cover: 'assets/covers/lemonade.png',
+    },
     {
         id: 2,
-        title: 'dontstartnow',
+        artist: 'Dua Lipa',
+        title: 'dontstartnow dontstartnow dontstartnow dontstartnow dontstartnow',
         audio: 'assets/audio/dontstartnow.mp3',
         cover: 'assets/covers/dontstartnow.png',
     },
@@ -14,12 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeoutId;
 
     const audio = document.querySelector('#player');
+    const backImage = document.querySelector('.bg');
+    const trackCover = document.querySelector('.track__cover');
+    const trackArtist = document.querySelector('.track__artist');
+    const trackTitle = document.querySelector('.track__title');
     const trackPos = document.querySelector('.track__pos');
     const trackTime = document.querySelector('.track__time');
-    const trackSeek = document.querySelector('.track__seek');
+    const trackProgress = document.querySelector('.track__progress');
+    const trackProgressBar = document.querySelector('.track__bar');
     const trackPlayButton = document.querySelector('#play-button');
     const trackPrevButton = document.querySelector('#prev-button');
     const trackNextButton = document.querySelector('#next-button');
+
+    const progressBarWidth = +trackProgress.clientWidth;
+    console.log('progressBarWidth:', progressBarWidth);
 
     if (!audio) {
         return;
@@ -27,11 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     audio.addEventListener('loadeddata', () => {
         console.log('[loadeddata] audio.duration:', audio.duration);
-        trackSeek.max = audio.duration;
-        trackSeek.value = audio.currentTime;
+        // trackSeek.max = audio.duration;
+        // trackSeek.value = audio.currentTime;
+        // const ratio = audio.currentTime / audio.duration;
+        // trackProgressBar.style.width = `${ratio * progressBarWidth}px`;
+        trackProgressBar.style.width = 0;
         trackTime.textContent = getTime(audio.duration);
         trackPos.textContent = getTime(audio.currentTime);
         // console.log('trackSeek.value:', trackSeek.value);
+        backImage.style.backgroundImage = `url(${tracks[trackNum].cover})`;
+        trackCover.style.backgroundImage = `url(${tracks[trackNum].cover})`;
+        trackArtist.textContent = tracks[trackNum].artist;
+        trackTitle.textContent = tracks[trackNum].title;
         play();
     });
 
@@ -45,26 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProgressBar();
     });
 
-    trackSeek.addEventListener('click', (e) => {
-        const pos = +e.target.value;
-        clearTimeout(timeoutId);
-        console.log('pos:', pos, 'e.target.value:', e.target.value);
-        audio.currentTime = pos;
-        trackPos.textContent = getTime(pos);
-    });
-
-    trackSeek.addEventListener('mousedown', (e) => {
-        console.log('down pos:', e.target.value);
+    trackProgress.addEventListener('click', (e) => {
+        // console.dir(e);
+        // console.dir(e.target);
+        // console.dir(e.currentTarget);
+        // console.log('x:', e.offsetX, 'of:', e.currentTarget.clientWidth);
+        // console.log('y:', e.offsetY, 'of:', e.currentTarget.clientHeight);
+        const ratio = e.offsetX / progressBarWidth;
+        audio.currentTime = ratio * audio.duration;
     });
 
     function updateProgressBar() {
         console.log('current position:', audio.currentTime);
         clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-            trackSeek.value = audio.currentTime;
-            trackPos.textContent = getTime(audio.currentTime);
-            updateProgressBar();
-        }, 500);
+        trackPos.textContent = getTime(audio.currentTime);
+        const ratio = audio.currentTime / audio.duration;
+        trackProgressBar.style.width = `${ratio * progressBarWidth}px`;
+        if (playState) {
+            timeoutId = setTimeout(() => {
+                updateProgressBar();
+            }, 500);
+        }
     }
 
     trackPlayButton.addEventListener('click', (e) => {

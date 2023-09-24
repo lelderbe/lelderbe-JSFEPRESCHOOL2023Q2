@@ -10,21 +10,34 @@
 </head>
 
 <body>
-    <div class="bg">
+    <section class="bg"></section>
+    <section class="player__wrapper">
         <div class="player">
-            <audio id="player" src="" controls></audio>
-            <div class="player__cover"></div>
-            <div class="player__controls">
-                <div class="track__pos"></div>
-                <div class="track__time"></div>
-                <input class="track__seek" type="range" value="0" max="" />
-                <a class="button" id="play-button" href="#"></a>
-                <a class="button prev" id="prev-button" href="#"></a>
-                <a class="button next" id="next-button" href="#"></a>
-                <!-- <progress class="track__seek">70%</progress> -->
+            <div class="track__cover"></div>
+            <div class="track__controls">
+                <div class="track__artist"></div>
+                <div class="track__title"></div>
+                <div class="player__controls">
+                    <a class="button" id="play-button" href="#"></a>
+                    <div>
+                        <div class="track__timings">
+                            <div class="track__pos"></div>
+                            <div class="track__time"></div>
+                        </div>
+                        <div class="track__progress">
+                            <div class="track__bar"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="button prev" id="prev-button" href="#"></a>
+                        <a class="button next" id="next-button" href="#"></a>
+                    </div>
+                    <!-- <progress class="track__seek">70%</progress> -->
+                </div>
             </div>
+            <audio id="player" src=""></audio>
         </div>
-    </div>
+    </section>
     <script src="index.js"></script>
 </body>
 
