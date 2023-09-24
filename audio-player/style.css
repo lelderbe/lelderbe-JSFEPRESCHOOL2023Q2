@@ -1,3 +1,8 @@
+:root {
+    --player-width: 350px;
+    --player-width-mobile: 320px;
+}
+
 body {
     height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -17,9 +22,10 @@ a:hover {
 }
 
 .wrapper {
-    min-width: 350px;
-    max-width: 350px;
+    min-width: var(--player-width);
+    max-width: var(--player-width);
     margin: 0 auto;
+    transition: all 0.3s ease-out;
 }
 
 .bg {
@@ -29,6 +35,7 @@ a:hover {
     bottom: 50px;
     left: 0;
     background-size: cover;
+    background-position: center;
     overflow: hidden;
     filter: blur(10px);
     transition: all 0.3s ease-out;
@@ -41,22 +48,26 @@ a:hover {
     bottom: 0;
     left: 0;
     display: flex;
+    padding-bottom: 50px;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
 .player {
-    width: 350px;
+    width: var(--player-width);
     background-color: #fff;
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 10px;
     overflow: hidden;
+    transition: all 0.3s ease-out;
 }
 
 .track__cover {
-    height: 350px;
+    height: 450px;
     background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease-out;
 }
 
 .track__controls {
@@ -83,19 +94,24 @@ a:hover {
 
 .track__timings {
     display: flex;
+    margin-bottom: 2px;
     justify-content: space-between;
+    font-size: 13px;
 }
 
 .track__progress {
-    height: 20px;
+    height: 14px;
     width: 130px;
     cursor: pointer;
-    border: 5px solid #000;
+    border: 2px solid #000;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .track__bar {
     height: 100%;
-    background-color: aquamarine;
+    background-color: deeppink;
+    /* background-color: gray; */
 }
 
 .button {
@@ -130,7 +146,7 @@ a:hover {
 
 .footer__wrapper {
     display: flex;
-    padding: 10px;
+    padding: 0 10px;
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
@@ -158,4 +174,19 @@ a:hover {
 
 .footer p:nth-child(3) img {
     height: 40px;
+}
+
+@media (max-width: 378px) {
+    .wrapper {
+        min-width: var(--player-width-mobile);
+        max-width: var(--player-width-mobile);
+    }
+
+    .track__cover {
+        height: 250px;
+    }
+
+    .player {
+        width: var(--player-width-mobile);
+    }
 }

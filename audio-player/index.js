@@ -11,22 +11,18 @@ const tracks = [
         artist: 'Beyonce',
         title: "Don't Hurt Yourself",
         audio: 'assets/audio/beyonce.mp3',
-        cover: 'assets/covers/lemonade.png',
+        cover: 'assets/covers/lemonade.jpg',
     },
     {
         id: 3,
         artist: 'Dua Lipa',
         title: "Don't Start Now",
         audio: 'assets/audio/dontstartnow.mp3',
-        cover: 'assets/covers/dontstartnow.png',
+        cover: 'assets/covers/dontstartnow.jpg',
     },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    let trackNum = 0;
-    let playState = false;
-    let timeoutId;
-
     const audio = document.querySelector('#player');
     const backImage = document.querySelector('.bg');
     const trackCover = document.querySelector('.track__cover');
@@ -40,23 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const trackPrevButton = document.querySelector('#prev-button');
     const trackNextButton = document.querySelector('#next-button');
 
+    let trackNum = 0;
+    let playState = false;
+    let timeoutId;
     const progressBarWidth = +trackProgress.clientWidth;
-    console.log('progressBarWidth:', progressBarWidth);
 
-    if (!audio) {
+    if (!audio || !tracks.length) {
         return;
     }
 
+    /**
+     * Update track cover, info, progress bar after load audio file
+     */
     audio.addEventListener('loadeddata', () => {
-        console.log('[loadeddata] audio.duration:', audio.duration);
-        // trackSeek.max = audio.duration;
-        // trackSeek.value = audio.currentTime;
-        // const ratio = audio.currentTime / audio.duration;
-        // trackProgressBar.style.width = `${ratio * progressBarWidth}px`;
         trackProgressBar.style.width = 0;
+        trackPos.textContent = getTime(0);
         trackTime.textContent = getTime(audio.duration);
-        trackPos.textContent = getTime(audio.currentTime);
-        // console.log('trackSeek.value:', trackSeek.value);
         backImage.style.backgroundImage = `url("${tracks[trackNum].cover}")`;
         trackCover.style.backgroundImage = `url("${tracks[trackNum].cover}")`;
         trackArtist.textContent = tracks[trackNum].artist;
@@ -64,28 +59,30 @@ document.addEventListener('DOMContentLoaded', () => {
         play();
     });
 
-    audio.addEventListener('ended', (e) => {
-        console.log('track ended, start next track');
+    /**
+     * After finish current track, switch to the next one
+     */
+    audio.addEventListener('ended', () => {
         trackNextButton.dispatchEvent(new Event('click'));
     });
 
+    /**
+     * Run update track's current time and progress bar after audio set new time
+     */
     audio.addEventListener('seeked', () => {
-        console.log('seeked');
         updateProgressBar();
     });
 
     trackProgress.addEventListener('click', (e) => {
-        // console.dir(e);
-        // console.dir(e.target);
-        // console.dir(e.currentTarget);
-        // console.log('x:', e.offsetX, 'of:', e.currentTarget.clientWidth);
-        // console.log('y:', e.offsetY, 'of:', e.currentTarget.clientHeight);
         const ratio = e.offsetX / progressBarWidth;
         audio.currentTime = ratio * audio.duration;
     });
 
+    /**
+     * Update track's current time and progress bar, if playing
+     */
     function updateProgressBar() {
-        console.log('current position:', audio.currentTime);
+        // console.log('current position:', audio.currentTime);
         clearTimeout(timeoutId);
         trackPos.textContent = getTime(audio.currentTime);
         const ratio = audio.currentTime / audio.duration;
@@ -105,32 +102,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     trackPrevButton.addEventListener('click', (e) => {
-        changeTrack(e, -1);
+        e.preventDefault();
+        changeTrack(-1);
     });
 
     trackNextButton.addEventListener('click', (e) => {
-        changeTrack(e, 1);
+        e.preventDefault();
+        changeTrack(1);
     });
 
     initTrack();
-    refresh();
 
-    function changeTrack(e, move) {
-        e.preventDefault();
+    function changeTrack(move) {
         const nextTrackNum = trackNum + move;
         trackNum = nextTrackNum < 0 ? tracks.length - 1 : nextTrackNum === tracks.length ? 0 : nextTrackNum;
         initTrack();
-        // refresh();
     }
 
     function initTrack() {
         audio.src = tracks[trackNum].audio;
-        console.log(audio.duration);
-        // updateProgressBar();
     }
 
     function play() {
-        console.log('audio.paused:', audio.paused);
         if (playState) {
             audio.play();
             updateProgressBar();
@@ -140,12 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function refresh() {}
-
     function getTime(time) {
         const minutes = `00${Math.floor(time / 60)}`.slice(-2);
         const seconds = `00${Math.floor(time % 60)}`.slice(-2);
-        // console.log(`${minutes}:${seconds}`);
         return `${minutes}:${seconds}`;
     }
 });
