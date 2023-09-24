@@ -46,11 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Update track cover, info, progress bar after load audio file
+     * Update track cover, info, progress bar after load audio file or manually change track position
      */
     audio.addEventListener('canplay', () => {
-        trackProgressBar.style.width = 0;
-        trackPos.textContent = getTime(0);
+        clearTimeout(timeoutId);
         trackTime.textContent = getTime(audio.duration);
         backImage.style.backgroundImage = `url("${tracks[trackNum].cover}")`;
         trackCover.style.backgroundImage = `url("${tracks[trackNum].cover}")`;
@@ -66,26 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
         trackNextButton.dispatchEvent(new Event('click'));
     });
 
-    /**
-     * Run update track's current time and progress bar after audio set new time
-     */
-    audio.addEventListener('seeked', () => {
-        updateProgressBar();
-    });
-
     trackProgress.addEventListener('click', (e) => {
         const ratio = e.offsetX / progressBarWidth;
         audio.currentTime = ratio * audio.duration;
     });
 
     /**
-     * Update track's current time and progress bar, if playing
+     * Update track's current time and progress bar, and set timeout for repeat if playing
      */
     function updateProgressBar() {
         clearTimeout(timeoutId);
-        trackPos.textContent = getTime(audio.currentTime);
         const ratio = audio.currentTime / audio.duration;
         trackProgressBar.style.width = `${Math.round(ratio * progressBarWidth)}px`;
+        trackPos.textContent = getTime(audio.currentTime);
         if (playState) {
             timeoutId = setTimeout(() => {
                 updateProgressBar();
@@ -110,26 +102,19 @@ document.addEventListener('DOMContentLoaded', () => {
         changeTrack(1);
     });
 
-    initTrack();
-
-    function changeTrack(move) {
+    function changeTrack(move = 0) {
         const nextTrackNum = trackNum + move;
         trackNum = nextTrackNum < 0 ? tracks.length - 1 : nextTrackNum === tracks.length ? 0 : nextTrackNum;
-        initTrack();
-    }
-
-    function initTrack() {
         audio.src = tracks[trackNum].audio;
     }
 
     function play() {
         if (playState) {
             audio.play();
-            updateProgressBar();
         } else {
             audio.pause();
-            clearTimeout(timeoutId);
         }
+        updateProgressBar();
     }
 
     function getTime(time) {
@@ -137,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const seconds = `00${Math.floor(time % 60)}`.slice(-2);
         return `${minutes}:${seconds}`;
     }
+
+    changeTrack();
 });
 
 console.log(`
