@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let trackNum = 0;
     let playState = false;
-    let timeoutId;
     const progressBarWidth = +trackProgress.clientWidth;
 
     if (!audio || !tracks.length) {
@@ -49,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
      * Update track cover, info, progress bar after load audio file or manually change track position
      */
     audio.addEventListener('canplay', () => {
-        clearTimeout(timeoutId);
         trackTime.textContent = getTime(audio.duration);
         backImage.style.backgroundImage = `url("${tracks[trackNum].cover}")`;
         trackCover.style.backgroundImage = `url("${tracks[trackNum].cover}")`;
         trackArtist.textContent = tracks[trackNum].artist;
         trackTitle.textContent = tracks[trackNum].title;
         play();
+        audio.dispatchEvent(new Event('timeupdate'));
     });
 
     /**
@@ -65,25 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
         trackNextButton.dispatchEvent(new Event('click'));
     });
 
+    /**
+     * Call update track's current time and progress bar when audio currentTime changed
+     */
+    audio.addEventListener('timeupdate', () => {
+        const ratio = audio.currentTime / audio.duration;
+        trackProgressBar.style.width = `${Math.round(ratio * progressBarWidth)}px`;
+        trackPos.textContent = getTime(audio.currentTime);
+    });
+
     trackProgress.addEventListener('click', (e) => {
         const ratio = e.offsetX / progressBarWidth;
         audio.currentTime = ratio * audio.duration;
     });
-
-    /**
-     * Update track's current time and progress bar, and set timeout for repeat if playing
-     */
-    function updateProgressBar() {
-        clearTimeout(timeoutId);
-        const ratio = audio.currentTime / audio.duration;
-        trackProgressBar.style.width = `${Math.round(ratio * progressBarWidth)}px`;
-        trackPos.textContent = getTime(audio.currentTime);
-        if (playState) {
-            timeoutId = setTimeout(() => {
-                updateProgressBar();
-            }, 500);
-        }
-    }
 
     trackPlayButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -105,7 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function changeTrack(move = 0) {
         const nextTrackNum = trackNum + move;
         trackNum = nextTrackNum < 0 ? tracks.length - 1 : nextTrackNum === tracks.length ? 0 : nextTrackNum;
+        audio.currentTime = 0;
         audio.src = tracks[trackNum].audio;
+        audio.load();
     }
 
     function play() {
@@ -114,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             audio.pause();
         }
-        updateProgressBar();
     }
 
     function getTime(time) {
