@@ -1,6 +1,6 @@
 :root {
     --player-width: 350px;
-    --player-width-mobile: 320px;
+    --player-width-mobile: 300px;
 }
 
 body {
@@ -112,7 +112,6 @@ a:hover {
     height: 100%;
     width: 0;
     background-color: deeppink;
-    /* background-color: gray; */
 }
 
 .button {
@@ -187,7 +186,20 @@ a:hover {
         height: 250px;
     }
 
+    .track__controls {
+        padding: 6px 14px 14px;
+    }
+
+    .player__wrapper {
+        padding-bottom: 40px;
+    }
+
     .player {
         width: var(--player-width-mobile);
+        border-radius: 6px;
+    }
+
+    .footer {
+        height: 40px;
     }
 }

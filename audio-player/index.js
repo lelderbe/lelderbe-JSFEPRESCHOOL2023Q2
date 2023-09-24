@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /**
-     * Call update track's current time and progress bar when audio currentTime changed
+     * Update track's current time and progress bar when audio.currentTime changed
      */
     audio.addEventListener('timeupdate', () => {
         const ratio = audio.currentTime / audio.duration;
