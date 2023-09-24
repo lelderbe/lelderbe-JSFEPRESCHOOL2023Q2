@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Update track cover, info, progress bar after load audio file
      */
-    audio.addEventListener('loadeddata', () => {
+    audio.addEventListener('canplay', () => {
         trackProgressBar.style.width = 0;
         trackPos.textContent = getTime(0);
         trackTime.textContent = getTime(audio.duration);
@@ -82,11 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
      * Update track's current time and progress bar, if playing
      */
     function updateProgressBar() {
-        // console.log('current position:', audio.currentTime);
         clearTimeout(timeoutId);
         trackPos.textContent = getTime(audio.currentTime);
         const ratio = audio.currentTime / audio.duration;
-        trackProgressBar.style.width = `${ratio * progressBarWidth}px`;
+        trackProgressBar.style.width = `${Math.round(ratio * progressBarWidth)}px`;
         if (playState) {
             timeoutId = setTimeout(() => {
                 updateProgressBar();
