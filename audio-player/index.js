@@ -1,15 +1,22 @@
 const tracks = [
     {
         id: 1,
+        artist: 'Zlata Lari',
+        title: 'Фиолетовые сны',
+        audio: 'assets/audio/Zlata Lari - violet dreams.mp3',
+        cover: 'assets/covers/Zlata Lari - violet dreams.jpg',
+    },
+    {
+        id: 2,
         artist: 'Beyonce',
-        title: 'lemonade lemonade lemonade lemonade lemonade lemonade lemonade lemonade',
+        title: "Don't Hurt Yourself",
         audio: 'assets/audio/beyonce.mp3',
         cover: 'assets/covers/lemonade.png',
     },
     {
-        id: 2,
+        id: 3,
         artist: 'Dua Lipa',
-        title: 'dontstartnow dontstartnow dontstartnow dontstartnow dontstartnow',
+        title: "Don't Start Now",
         audio: 'assets/audio/dontstartnow.mp3',
         cover: 'assets/covers/dontstartnow.png',
     },
@@ -50,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         trackTime.textContent = getTime(audio.duration);
         trackPos.textContent = getTime(audio.currentTime);
         // console.log('trackSeek.value:', trackSeek.value);
-        backImage.style.backgroundImage = `url(${tracks[trackNum].cover})`;
-        trackCover.style.backgroundImage = `url(${tracks[trackNum].cover})`;
+        backImage.style.backgroundImage = `url("${tracks[trackNum].cover}")`;
+        trackCover.style.backgroundImage = `url("${tracks[trackNum].cover}")`;
         trackArtist.textContent = tracks[trackNum].artist;
         trackTitle.textContent = tracks[trackNum].title;
         play();

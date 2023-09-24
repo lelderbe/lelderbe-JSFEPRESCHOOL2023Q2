@@ -1,24 +1,37 @@
 body {
     height: 100vh;
-    margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+}
+
+a {
+    transition: opacity 0.3s ease-out;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+.wrapper {
+    min-width: 350px;
+    max-width: 350px;
+    margin: 0 auto;
 }
 
 .bg {
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: 50px;
     left: 0;
-    height: 100%;
-    /* background-color: #000; */
     background-size: cover;
     overflow: hidden;
     filter: blur(10px);
+    transition: all 0.3s ease-out;
 }
 
 .player__wrapper {
@@ -35,7 +48,6 @@ body {
 
 .player {
     width: 350px;
-    /* height: 500px; */
     background-color: #fff;
     border: 1px solid #000;
     border-radius: 10px;
@@ -43,8 +55,7 @@ body {
 }
 
 .track__cover {
-    min-height: 350px;
-    max-height: 350px;
+    height: 350px;
     background-size: cover;
 }
 
@@ -105,4 +116,46 @@ body {
 
 .button.next {
     background-image: url('assets/img/forward.png');
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    height: 50px;
+    background: #fff;
+}
+
+.footer__wrapper {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.footer p {
+    flex-basis: 100px;
+}
+
+.footer a {
+    display: flex;
+}
+
+.footer img {
+    height: 20px;
+}
+
+.footer p:nth-child(2) {
+    text-align: center;
+}
+
+.footer p:nth-child(3) a {
+    justify-content: flex-end;
+}
+
+.footer p:nth-child(3) img {
+    height: 40px;
 }
