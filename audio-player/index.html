@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/x-icon">
     <title>js30#1.2-audio-player</title>
 </head>
 
@@ -18,7 +19,7 @@
                 <div class="track__artist"></div>
                 <div class="track__title"></div>
                 <div class="player__controls">
-                    <a class="button" id="play-button" href="#"></a>
+                    <a class="button" id="play-button" href="#" title="Play/Pause"></a>
                     <div>
                         <div class="track__timings">
                             <div class="track__pos"></div>
@@ -29,10 +30,9 @@
                         </div>
                     </div>
                     <div>
-                        <a class="button prev" id="prev-button" href="#"></a>
-                        <a class="button next" id="next-button" href="#"></a>
+                        <a class="button prev" id="prev-button" href="#" title="Previous track"></a>
+                        <a class="button next" id="next-button" href="#" title="Next track"></a>
                     </div>
-                    <!-- <progress class="track__seek">70%</progress> -->
                 </div>
             </div>
             <audio id="player"></audio>
