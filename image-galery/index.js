@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.search__input');
     const searchClear = document.querySelector('.search__cross-icon');
 
+    let images = [];
+
     form?.addEventListener('submit', (e) => {
         e.preventDefault();
         getDataAPI(searchInput.value);
@@ -12,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
     searchClear?.addEventListener('click', () => {
         searchInput.value = '';
         searchInput.focus();
+    });
+
+    imagesBlock?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = e.target.dataset.id;
+        const image = images.find((item) => item.id === id);
+        openModal(image.urls.regular, () => searchInput.focus());
     });
 
     function getDataAPI(search = 'spring') {
@@ -26,25 +35,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then((data) => {
-                showImages(data.results);
+                images = data.results;
+                showImages();
             })
             .catch((err) => {
                 console.err(err.message);
             });
     }
 
-    function showImages(data) {
-        if (!data.length) {
+    function showImages() {
+        if (!images.length) {
+            imagesBlock.style.display = 'block';
             imagesBlock.innerHTML = `No images found for this search string: '${searchInput.value}'`;
             return;
         }
-        imagesBlock.innerHTML = data
+        imagesBlock.style.display = 'grid';
+        imagesBlock.innerHTML = images
             .map((item) => {
-                return `<div style="background-image: url(${item.urls.small});"></div>`;
+                return `<div class="image__wrapper"><div class="images__image" data-id="${item.id}" style="background-image: url(${item.urls.small});"></div></div>`;
             })
             .join('');
     }
 
+    initModal('.modal');
     getDataAPI();
     searchInput.focus();
 });
