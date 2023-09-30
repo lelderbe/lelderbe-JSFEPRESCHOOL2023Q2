@@ -2,37 +2,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>js30#2.2-image-galery</title>
 </head>
 
 <body>
     <header class="header">
         <div class="wrapper header__wrapper">
-            <div class="header__logo">Unsplash API</div>
+            <div class="header__logo">
+                <img src="img/unsplash-logo.svg" alt="Unsplash">
+                <h1>Unsplash API</h1>
+            </div>
             <form class="header__form" action="#">
-                <input class="header__search" type="text">
+                <div class="header__search">
+                    <input class="search__input" type="text" placeholder="Search...">
+                    <img class="search__cross-icon" src="img/cross-icon.png" alt="clear">
+                </div>
             </form>
         </div>
     </header>
     <main class="images">
-        <div class="wrapper images__wrapper">
-            images
-        </div>
+        <div class="wrapper images__wrapper"></div>
     </main>
     <footer class="footer">
         <div class="wrapper footer__wrapper">
             <p>
                 <a href="https://rs.school/js-stage0/" target="_blank">
-                    <img src="assets/rs_school_js.svg" alt="RSSchool" />
+                    <img src="img/rs_school_js.svg" alt="RSSchool">
                 </a>
             </p>
             <p><strong>2023</strong></p>
             <p>
                 <a href="https://github.com/lelderbe/" target="_blank">
-                    <img src="assets/GitHub-Emblem.png" alt="Github" />
+                    <img src="img/GitHub-Emblem.png" alt="Github">
                 </a>
             </p>
         </div>

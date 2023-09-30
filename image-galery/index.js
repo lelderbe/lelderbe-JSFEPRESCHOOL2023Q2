@@ -1,19 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
     const imagesBlock = document.querySelector('.images__wrapper');
+    const form = document.querySelector('.header__form');
+    const searchInput = document.querySelector('.search__input');
+    const searchClear = document.querySelector('.search__cross-icon');
+
+    form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        getDataAPI(searchInput.value);
+    });
+
+    searchClear?.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+    });
 
     function getDataAPI(search = 'spring') {
-        // const url = 'https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
-        const url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+        const accessKey = 'HrHmksJp42vVejDGK4i96ByiheX8__eMEbdQLAL3HQs';
+        const url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&orientation=landscape&client_id=${accessKey}`;
 
         fetch(url)
             .then((response) => {
-                if (!response.ok) {
+                if (!response.ok || response.status !== 200) {
                     throw new Error('Network response was not OK');
                 }
                 return response.json();
             })
             .then((data) => {
-                console.log('data:', data);
                 showImages(data.results);
             })
             .catch((err) => {
@@ -22,19 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showImages(data) {
-        console.log('showing data:', data);
+        if (!data.length) {
+            imagesBlock.innerHTML = `No images found for this search string: '${searchInput.value}'`;
+            return;
+        }
         imagesBlock.innerHTML = data
             .map((item) => {
                 return `<div style="background-image: url(${item.urls.small});"></div>`;
-
-                // return `<img src="${item.urls.regular}" alt="${
-                //     item.description || item.alt_description || ''
-                // }">`;
             })
             .join('');
     }
 
     getDataAPI();
+    searchInput.focus();
 });
 
 console.log(`
