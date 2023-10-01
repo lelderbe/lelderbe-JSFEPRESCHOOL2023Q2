@@ -1,14 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const imagesBlock = document.querySelector('.images__wrapper');
+    const imagesBlock = document.querySelector('.images__container');
     const form = document.querySelector('.header__form');
     const searchInput = document.querySelector('.search__input');
     const searchClear = document.querySelector('.search__cross-icon');
+    const searchBtn = document.querySelector('.search__search-icon');
+    const getMoreBtn = document.querySelector('.images__more');
 
     let images = [];
+    let pageImages = [];
+    let page = 1;
+    let totalPages = 0;
+    let searchValue;
+    const limit = 30;
 
     form?.addEventListener('submit', (e) => {
         e.preventDefault();
-        getDataAPI(searchInput.value);
+        page = 1;
+        searchValue = searchInput.value;
+        images = [];
+        getDataAPI(searchValue);
     });
 
     searchClear?.addEventListener('click', () => {
@@ -23,12 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const id = e.target.dataset.id;
         const image = images.find((item) => item.id === id);
-        openModal(image.urls.regular, () => searchInput.focus());
+        openModal(image.urls.regular);
+    });
+
+    getMoreBtn?.addEventListener('click', (e) => {
+        page++;
+        getDataAPI(searchValue);
+    });
+
+    searchBtn?.addEventListener('click', () => {
+        form.dispatchEvent(new Event('submit'));
+        searchInput.focus();
     });
 
     function getDataAPI(search = 'spring') {
         const accessKey = 'HrHmksJp42vVejDGK4i96ByiheX8__eMEbdQLAL3HQs';
-        const url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&orientation=landscape&client_id=${accessKey}`;
+        const url = `https://api.unsplash.com/search/photos?query=${search}&page=${page}&per_page=${limit}&orientation=landscape&client_id=${accessKey}`;
 
         fetch(url)
             .then((response) => {
@@ -38,11 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then((data) => {
-                images = data.results;
+                images.push(...data.results);
+                pageImages = data.results;
+                totalPages = data.total_pages;
                 showImages();
             })
             .catch((err) => {
-                console.err(err.message);
+                console.error(err);
             });
     }
 
@@ -50,18 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!images.length) {
             imagesBlock.style.display = 'block';
             imagesBlock.innerHTML = `No images found for this search string: '${searchInput.value}'`;
+            getMoreBtn.style.display = 'none';
             return;
         }
         imagesBlock.style.display = 'grid';
-        imagesBlock.innerHTML = images
+        if (page === 1) {
+            imagesBlock.innerHTML = '';
+        }
+        content = pageImages
             .map((item) => {
                 return `<div class="image__wrapper"><div class="images__image" data-id="${item.id}" style="background-image: url(${item.urls.small});"></div></div>`;
             })
             .join('');
+
+        imagesBlock.insertAdjacentHTML('beforeend', content);
+        getMoreBtn.style.display = page >= totalPages ? 'none' : 'flex';
     }
 
     initModal('.modal');
-    getDataAPI();
+    getDataAPI(searchValue);
     searchInput.focus();
 });
 
@@ -82,6 +111,7 @@ Score: 70 / 60
   + в поле ввода есть крестик при клике по которому поисковый запрос из поля ввода удаляется и отображается placeholder +5
 +10 Очень высокое качество оформления приложения и/или дополнительный не предусмотренный в задании функционал, улучшающий качество приложения
   + добавил просмотр изображений
+  + добавил догрузку следующих изображений
 
   ____________________________
 <  Я эксперт в своей области.  >
