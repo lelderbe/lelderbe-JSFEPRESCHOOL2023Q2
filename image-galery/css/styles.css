@@ -41,10 +41,6 @@ a:hover {
     align-items: flex-end;
 }
 
-.header__logo img {
-    /* margin-right: 16px; */
-}
-
 .header__logo h1 {
     font-size: 30px;
 }
@@ -116,7 +112,7 @@ a:hover {
 }
 
 .images__more {
-    display: flex;
+    display: none;
     padding: 20px 0;
     align-items: center;
     justify-content: center;
