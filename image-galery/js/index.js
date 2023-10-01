@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     imagesBlock?.addEventListener('click', (e) => {
         e.stopPropagation();
+        if (e.target === e.currentTarget) {
+            return;
+        }
         const id = e.target.dataset.id;
         const image = images.find((item) => item.id === id);
         openModal(image.urls.regular, () => searchInput.focus());
