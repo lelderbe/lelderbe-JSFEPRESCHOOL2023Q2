@@ -1,30 +1,86 @@
 import { booksAPI } from './booksAPI.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Burger menu -----------------------------------------------------------------------------------------------
-    const burgerMenuBtn = document.querySelector('#menu-button');
-    const menuPanel = document.querySelector('#menu');
+    // Local storage ---------------------------------------------------------------------------------------------
+    const state = {
+        // user: {
+        //     firstName: null,
+        //     lastName: null,
+        //     email: null,
+        //     password: null,
+        // },
+    };
 
-    if (!burgerMenuBtn || !menuPanel) {
-        return;
+    state.user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : undefined;
+
+    console.log('state:', state);
+
+    function addModalListeners({ button, panel, buttonClass, hideModalClass, showModalClass }) {
+        const modalOpenButton = document.querySelector(button);
+        const modalBody = document.querySelector(panel);
+    
+        // if (!modalOpenButton || !modalBody) {
+        if (!modalBody) {
+            return;
+        }
+    
+        modalOpenButton?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (buttonClass) modalOpenButton?.classList.toggle(buttonClass);
+            if (hideModalClass) modalBody.classList.toggle(hideModalClass);
+            if (showModalClass) modalBody.classList.toggle(showModalClass);
+        });
+    
+        modalBody.addEventListener('click', (e) => {
+            if (e.target.localName !== 'a') {
+                e.stopPropagation();
+            }
+        });
+    
+        document.body.addEventListener('click', () => {
+            if (buttonClass) modalOpenButton?.classList.remove(buttonClass);
+            if (hideModalClass) modalBody.classList.add(hideModalClass);
+            if (showModalClass) modalBody.classList.remove(showModalClass);
+        });
     }
 
-    burgerMenuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        burgerMenuBtn.classList.toggle('icon_burger-close');
-        menuPanel.classList.toggle('navigation_show');
-    });
+    // Burger menu -----------------------------------------------------------------------------------------------
+    // const burgerMenuBtn = document.querySelector('#menu-button');
+    // const menuPanel = document.querySelector('#menu');
 
-    menuPanel.addEventListener('click', (e) => {
-        if (e.target.localName !== 'a') {
-            e.stopPropagation();
-        }
-    });
+    // if (!burgerMenuBtn || !menuPanel) {
+    //     return;
+    // }
 
-    document.body.addEventListener('click', () => {
-        burgerMenuBtn.classList.remove('icon_burger-close');
-        menuPanel.classList.remove('navigation_show');
-    });
+    // burgerMenuBtn.addEventListener('click', (e) => {
+    //     e.stopPropagation();
+    //     burgerMenuBtn.classList.toggle('icon_burger-close');
+    //     menuPanel.classList.toggle('navigation_show');
+    // });
+
+    // menuPanel.addEventListener('click', (e) => {
+    //     if (e.target.localName !== 'a') {
+    //         e.stopPropagation();
+    //     }
+    // });
+
+    // document.body.addEventListener('click', () => {
+    //     burgerMenuBtn.classList.remove('icon_burger-close');
+    //     menuPanel.classList.remove('navigation_show');
+    // });
+
+    // addModalListeners('#menu-button', '#menu', 'icon_burger-close', 'navigation_show');
+    addModalListeners({ button: '#menu-button', panel: '#menu', buttonClass: 'icon_burger-close', showModalClass: 'navigation_show' });
+
+    // Profile menu -----------------------------------------------------------------------------------------
+    // const profileMenuBtn = document.querySelector('.icon_profile');
+    // const profileMenu = document.querySelector('.profile');
+
+    // profileMenuBtn.addEventListener('click', () => {
+    //     profileMenu.classList.toggle('profile_hide');
+    // });
+
+    addModalListeners({ button: '.icon_profile', panel: '.profile', hideModalClass: 'profile_hide' });
 
     // About ------------------------------------------------------------------------------------------------
     const dotsParent = document.querySelector('.slider__dots');

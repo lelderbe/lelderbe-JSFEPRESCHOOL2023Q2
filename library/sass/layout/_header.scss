@@ -72,3 +72,52 @@
         }
     }
 }
+
+.profile {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 80px;
+    height: 115px;
+    padding-top: 5px;
+    font: normal 400 15px / 20px $ff-primary;
+    color: #000;
+    background-color: $c-light;
+    transition: opacity 0.3s ease-out;
+    overflow: hidden;
+
+    &__title {
+        font: normal 700 15px / 20px $ff-primary;
+        color: #000;
+        text-align: center;
+    }
+
+    &__divider {
+        margin: 5px 20px 15px;
+        border-bottom: 1px solid $c-colored;
+    }
+
+    &__links {
+        list-style: none;
+
+        li {
+            margin-bottom: 10px;
+            text-align: center;
+
+            a,
+            a:visited {
+                color: #000;
+            }
+
+            a:hover {
+                color: $c-colored;
+            }
+        }
+    }
+
+    &_hide {
+        height: 0;
+        padding-top: 0;
+        opacity: 0;
+    }
+}

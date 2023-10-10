@@ -341,6 +341,48 @@ h1 {
   }
 }
 
+.profile {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 80px;
+  height: 115px;
+  padding-top: 5px;
+  font: normal 400 15px/20px "Inter", sans-serif;
+  color: #000;
+  background-color: #ffffff;
+  transition: opacity 0.3s ease-out;
+  overflow: hidden;
+}
+.profile__title {
+  font: normal 700 15px/20px "Inter", sans-serif;
+  color: #000;
+  text-align: center;
+}
+.profile__divider {
+  margin: 5px 20px 15px;
+  border-bottom: 1px solid #bb945f;
+}
+.profile__links {
+  list-style: none;
+}
+.profile__links li {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.profile__links li a,
+.profile__links li a:visited {
+  color: #000;
+}
+.profile__links li a:hover {
+  color: #bb945f;
+}
+.profile_hide {
+  height: 0;
+  padding-top: 0;
+  opacity: 0;
+}
+
 .footer {
   min-width: 1440px;
   color: #ffffff;
