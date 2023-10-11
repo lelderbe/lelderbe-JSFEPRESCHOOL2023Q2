@@ -4,13 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 2, image: 'venus.png' },
         { id: 3, image: 'earth.png' },
         { id: 4, image: 'mars.png' },
+        { id: 5, image: 'alien.png' },
+        { id: 6, image: 'astronaut.png' },
+        { id: 7, image: 'star.png' },
+        { id: 8, image: 'saturn.png' },
     ];
 
     const mapEl = document.querySelector('.map');
 
+    const size = 12;
     let map;
-    let count;
+    let closedCards;
     let picks;
+    let steps;
 
     function getCardElement(data) {
         const card = document.createElement('div');
@@ -23,14 +29,40 @@ document.addEventListener('DOMContentLoaded', () => {
         return card;
     }
 
-    function init() {
+    function getRandom(from, to) {
+        console.log(from, to);
+        const value = Math.floor(Math.random() * (to + 1 - from) + from);
+        console.log(value);
+        return value;
+    }
+
+    function generateMap(count) {
         mapEl.innerHTML = '';
-        map = [cards[2], cards[2], cards[3], cards[3]];
-        count = map.length;
+        if (count % 2 !== 0 || count > size) {
+            map = [];
+            return;
+        }
+        const set = new Set();
+        while (set.size < count) {
+            const randomValue = getRandom(0, cards.length - 1);
+            set.add(randomValue);
+            console.log(set);
+        }
+        map = [...set].map((item) => [cards[item], cards[item]]).flat();
         shuffle(map);
         map.forEach((card) => {
             mapEl.append(getCardElement(card));
         });
+    }
+
+    function init() {
+        generateMap(size / 2);
+        if (map.length === 0) {
+            console.log('Error generate map');
+            return;
+        }
+        closedCards = map.length;
+        steps = 0;
         mapEl.onclick = (e) => handleCardClick(e);
         picks = [];
     }
@@ -64,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (picks.length < 2) {
             return;
         }
+        steps++;
         if (picks[0].dataset.id !== picks[1].dataset.id) {
             setTimeout(() => {
                 picks[0].classList.remove('opened');
@@ -71,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 picks = [];
             }, 1000);
         } else {
-            count = count - 2;
+            closedCards = closedCards - 2;
             picks = [];
         }
     }
