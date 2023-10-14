@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <title>js30#3.2-memory-game</title>
 </head>
@@ -18,6 +19,17 @@
 
     <main>
         <div class="map"></div>
+        <div class="uikit-modal" id="modal">
+            <div class="uikit-modal__inner">
+                <div class="uikit-modal__title">Это победа!</div>
+                <div class="uikit-modal__text"></div>
+                <div class="uikit-modal__buttons">
+                    <input class="btn accept-btn" type="button" value="Попробовать ещё раз">
+                    <input class="btn tops-btn disabled" type="button" value="Таблица рекордов">
+                    <input class="btn cancel-btn" type="button" value="Закрыть">
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -35,7 +47,8 @@
             </p>
         </div>
     </footer>
-    <script src="index.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,97 @@
+/* Modal ----------------------------------------------------------------------------------------------------------------------- */
+
+.uikit-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.uikit-modal__inner {
+    position: relative;
+    z-index: 1000;
+    display: block;
+    min-width: 360px;
+    max-width: 360px;
+    padding: 24px 24px 24px 24px;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #f2f3f6;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.12),
+        0px 12px 24px -6px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.uikit-modal__close-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.uikit-modal__close-icon:hover {
+    opacity: 1;
+}
+
+.uikit-modal__title {
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #262c31;
+}
+
+.uikit-modal__text {
+    white-space: pre-line;
+}
+
+.uikit-modal__buttons {
+    display: flex;
+    margin-top: 20px;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.uikit-modal__buttons .btn {
+    padding: 6px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.uikit-modal__buttons .btn:hover {
+    opacity: 0.7;
+}
+
+.uikit-modal__buttons input.default {
+    margin: 0 0 0 8px;
+    text-transform: uppercase;
+}
+
+.uikit-modal__buttons input.cancel-button {
+    margin: 0 0 0 8px;
+    background: var(--delete-button-bg);
+    color: var(--button-fg);
+}
+
+.uikit-modal__buttons input.cancel-button:hover {
+    background: var(--delete-button-hover-bg);
+}
+
+.uikit-modal__inner.disabled select,
+.uikit-modal__inner.disabled input,
+.uikit-modal__buttons .btn.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
