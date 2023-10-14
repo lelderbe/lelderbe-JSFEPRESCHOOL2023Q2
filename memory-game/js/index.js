@@ -14,24 +14,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mapEl = document.querySelector('.map');
 
-    const size = 4;
+    const size = 12;
     let map;
     let closedCards;
     let picks;
     let steps;
+
     const modal = new Modal('#modal');
     const acceptModalBtn = modal.root.querySelector('.accept-btn');
     const cancelModalBtn = modal.root.querySelector('.cancel-btn');
+    const top10ModalBtn = modal.root.querySelector('.top10-btn');
 
-    acceptModalBtn.onclick = (e) => {
-        e.preventDefault();
+    const modalTop10 = new Modal('#top10');
+    const acceptModalTop10Btn = modalTop10.root.querySelector('.accept-btn');
+    const cancelModalTop10Btn = modalTop10.root.querySelector('.cancel-btn');
+    const clearModalTop10Btn = modalTop10.root.querySelector('.clear-btn');
+    modalTop10.text.style.whiteSpace = 'unset';
+
+    const tools = document.querySelector('.tools');
+    const top10Btn = tools.querySelector('.top10-btn');
+    const currentSteps = tools.querySelector('.tools__steps');
+
+    top10Btn.onclick = () => {
+        modalTop10.openModal();
+    };
+
+    acceptModalBtn.onclick = () => {
         modal.closeModal();
         init();
     };
 
-    cancelModalBtn.onclick = (e) => {
-        e.preventDefault();
+    cancelModalBtn.onclick = () => {
         modal.closeModal();
+    };
+
+    top10ModalBtn.onclick = () => {
+        modal.closeModal();
+        modalTop10.openModal();
+    };
+
+    acceptModalTop10Btn.onclick = () => {
+        modalTop10.closeModal();
+        init();
+    };
+
+    cancelModalTop10Btn.onclick = () => {
+        modalTop10.closeModal();
+    };
+
+    clearModalTop10Btn.onclick = () => {
+        top10 = [];
+        localStorage.setItem('top10', JSON.stringify(top10));
+        modalTop10.onOpen();
+    };
+
+    modalTop10.onOpen = () => {
+        const header = `
+            <div class="top10__row">
+                <span class="top10__date">Когда</span>
+                <span class="top10__steps">Шагов</span>
+            </div>
+            <div class="top10__row">
+                <span class="top10__date">-------------</span>
+                <span class="top10__steps">-------------</span>
+            </div>
+        `;
+
+        modalTop10.text.innerHTML =
+            header +
+            top10
+                .map((item) => {
+                    const date = new Date(item.id).toLocaleDateString('ru-RU');
+                    return `
+                        <div class="top10__row">
+                            <span class="top10__date">${date}</span>
+                            <span class="top10__steps">${item.steps}</span>
+                        </div>
+                    `;
+                })
+                .join('');
     };
 
     function getCardElement(data) {
@@ -77,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         steps = 0;
         mapEl.onclick = (e) => handleCardClick(e);
         picks = [];
+        currentSteps.textContent = `Сделано шагов: ${steps}`;
     }
 
     /**
@@ -103,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         steps++;
+        currentSteps.textContent = `Сделано шагов: ${steps}`;
         if (picks[0].dataset.id !== picks[1].dataset.id) {
             setTimeout(() => {
                 picks[0].classList.remove('opened');
@@ -121,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
             top10.push({
                 id: Date.now(),
                 steps: steps,
-                // date: new Date().toLocaleDateString('ru-RU'),
             });
             modal.text.textContent = `Игра закончена.
 
@@ -157,15 +219,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log(`
-Score: 40 / 60
+Score: 60 / 60
 
 [+] Вёрстка +10
     [+] реализован интерфейс игры +5
     [+] в футере приложения есть ссылка на гитхаб автора приложения, год создания приложения, логотип курса со ссылкой на курс +5
 [+] Логика игры. Карточки, по которым кликнул игрок, переворачиваются согласно правилам игры +10
 [+] Игра завершается, когда открыты все карточки +10
-[-] По окончанию игры выводится её результат - количество ходов, которые понадобились для завершения игры +10
-[-] Результаты последних 10 игр сохраняются в local storage. Есть таблица рекордов, в которой сохраняются результаты предыдущих 10 игр +10
+[+] По окончанию игры выводится её результат - количество ходов, которые понадобились для завершения игры +10
+[+] Результаты последних 10 игр сохраняются в local storage. Есть таблица рекордов, в которой сохраняются результаты предыдущих 10 игр +10
 [+] По клику на карточку – она переворачивается плавно, если пара не совпадает – обе карточки так же плавно переварачиваются рубашкой вверх +10
 
   ____________________________

@@ -17,6 +17,13 @@
         </div>
     </header>
 
+    <div class="tools">
+        <div class="tools__steps">Step: </div>
+        <div class="tools__top10">
+            <input class="btn top10-btn" type="button" value="Таблица рекордов">
+        </div>
+    </div>
+
     <main>
         <div class="map"></div>
         <div class="uikit-modal" id="modal">
@@ -25,7 +32,18 @@
                 <div class="uikit-modal__text"></div>
                 <div class="uikit-modal__buttons">
                     <input class="btn accept-btn" type="button" value="Попробовать ещё раз">
-                    <input class="btn tops-btn disabled" type="button" value="Таблица рекордов">
+                    <input class="btn top10-btn" type="button" value="Таблица рекордов">
+                    <input class="btn cancel-btn" type="button" value="Закрыть">
+                </div>
+            </div>
+        </div>
+        <div class="uikit-modal" id="top10">
+            <div class="uikit-modal__inner">
+                <div class="uikit-modal__title">TOP 10</div>
+                <div class="uikit-modal__text"></div>
+                <div class="uikit-modal__buttons">
+                    <input class="btn accept-btn" type="button" value="Попробовать ещё раз">
+                    <input class="btn clear-btn" type="button" value="🔪 Очистить таблицу">
                     <input class="btn cancel-btn" type="button" value="Закрыть">
                 </div>
             </div>

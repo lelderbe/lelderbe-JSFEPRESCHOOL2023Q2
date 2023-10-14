@@ -47,6 +47,24 @@ main {
     justify-content: center;
 }
 
+.tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn {
+    padding: 6px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
 .map {
     display: flex;
     /* margin: 0 auto; */
@@ -99,6 +117,19 @@ main {
 
 .card.opened .back {
     transform: perspective(1000px) rotateY(0deg);
+}
+
+.top10__row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top10__date {
+    flex: 0 0 110px;
+}
+
+.top10__steps {
+    flex: 0 0 110px;
 }
 
 .footer {
